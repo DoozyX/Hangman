@@ -4,15 +4,22 @@ using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
 using System.Windows.Forms;
 using ListItem = System.Web.UI.WebControls.ListItem;
 
 namespace Hangman {
-    public partial class Hangman : Form {
+    public sealed partial class Hangman : Form {
+        private static readonly string scoresPath = @"../../Resources/scores.txt";
+        private static readonly string wordsPath = @"../../Resources/words/";
+
         /// <summary>
         /// Current game playing
         /// </summary>
-        private HangmanGame hangmanGame;
+        private HangmanGame _hangmanGame;
+
+        private Scores _highScores;
 
         /// <summary>
         /// Initialize the form
@@ -29,55 +36,29 @@ namespace Hangman {
             tabControlSinglePlayer.ItemSize = new Size(0, 1);
             tabControlSinglePlayer.SizeMode = TabSizeMode.Fixed;
             //Make text and images transparent
-                //Menu
-                pbMenuHangman.BackColor = Color.Transparent;
-                //SPMenu
-                lblSPName.BackColor = Color.Transparent;
-                rbSPDif.BackColor = Color.Transparent;
-                rbSPDif2.BackColor = Color.Transparent;
-                rbSPDif3.BackColor = Color.Transparent;
-                lblSPDif.BackColor = Color.Transparent;
-                lblSPCat.BackColor = Color.Transparent;
-                //SPGame
-                pbWood.BackColor = Color.Transparent;
-                pbHead.BackColor = Color.Transparent;
-                pbBody.BackColor = Color.Transparent;
-                pbLeftArm.BackColor = Color.Transparent;
-                pbRightArm.BackColor = Color.Transparent;
-                pbLeftLeg.BackColor = Color.Transparent;
-                pbRightLeg.BackColor = Color.Transparent;
-                lblScore.BackColor = Color.Transparent;
-                lblScore2.BackColor = Color.Transparent;
-                pnlLetters.BackColor = Color.Transparent;
-                //SPRes
-                lblSPRes1.BackColor = Color.Transparent;
-                lblSPRes2.BackColor = Color.Transparent;
-                lblSPREsScore.BackColor = Color.Transparent;
-                lblSPGuessWord.BackColor = Color.Transparent;
-                pbSPHanged.BackColor = Color.Transparent;
-                lblCorrectTitle.BackColor = Color.Transparent;
-                lblSPResCorrect.BackColor = Color.Transparent;
-                //Two Players
-                lblSoon.BackColor = Color.Transparent;
-                //High Scores
-                lblHighScoreTitle.BackColor = Color.Transparent;
-                lblHighScores.BackColor = Color.Transparent;
-                //Help
-                lblHelpTitle.BackColor = Color.Transparent;
-                lblHelp.BackColor = Color.Transparent;
+            foreach (Control control in tabControlMenu.Controls) {
+                control.BackColor = Color.Transparent;
+            }
+            foreach (Control control in tabControlSinglePlayer.Controls) {
+                control.BackColor = Color.Transparent;
+            }
 
             //find categories
-            string wordsPath = @"../../Resources/words/";
+
             string[] fileEntries = Directory.GetFiles(wordsPath);
-            List<ListItem> categories = fileEntries.Select(fileName => new ListItem(Path.GetFileNameWithoutExtension(fileName), fileName)).ToList();
+            List<ListItem> categories =
+                fileEntries.Select(fileName => new ListItem(Path.GetFileNameWithoutExtension(fileName), fileName))
+                    .ToList();
             cbCategories.DataSource = categories;
+
+            //High Scores
+            DeserializeScores();
         }
 
         //Menu Page
         private void btnSinglePlayer_Click(object sender, EventArgs e) {
             tabControlMenu.SelectedTab = tabSinglePlayer;
             tbSPName.Select();
-
         }
 
         private void btnTwoPlayers_Click(object sender, EventArgs e) {
@@ -86,6 +67,7 @@ namespace Hangman {
 
         private void btnHighScores_Click(object sender, EventArgs e) {
             tabControlMenu.SelectedTab = tabHighScores;
+            SetHighScores();
         }
 
         private void btnHelp_Click(object sender, EventArgs e) {
@@ -108,11 +90,8 @@ namespace Hangman {
         }
 
 
-        /// <summary>
-        /// Single Player
-        /// </summary>
-        private void tbSPName_Validating(object sender, CancelEventArgs e)
-        {
+        //Single Player
+        private void tbSPName_Validating(object sender, CancelEventArgs e) {
             if (tbSPName.Text.Trim().Length == 0) {
                 e.Cancel = true;
                 errorProvider1.SetError(tbSPName, "Enter Name!");
@@ -143,14 +122,13 @@ namespace Hangman {
         private void NewGame() {
             ClearSpMan();
             ResetLetters();
-            hangmanGame.NewGame();
-            lblSPGuessWord.Text = hangmanGame.GetWordMask();
-            lblScore.Text = hangmanGame.GetScore().ToString();
+            _hangmanGame.NewGame();
+            lblSPGuessWord.Text = _hangmanGame.GetWordMask();
+            lblScore.Text = _hangmanGame.GetScore().ToString();
         }
 
         private void UpdateGameState() {
-
-            int wrong = hangmanGame.GetWrongCount();
+            int wrong = _hangmanGame.GetWrongCount();
             switch (wrong) {
                 case 0:
                     ClearSpMan();
@@ -176,30 +154,30 @@ namespace Hangman {
                     break;
             }
             //for future
-            if (hangmanGame.CheckGameOver()) {
+            if (_hangmanGame.CheckGameOver()) {
                 EndGame();
             }
 
-            if (hangmanGame.CheckGuessed()) {
-                hangmanGame.NewWord();
+            if (_hangmanGame.CheckGuessed()) {
+                _hangmanGame.NewWord();
                 ResetLetters();
                 ClearSpMan();
             }
-            lblSPGuessWord.Text = hangmanGame.GetWordMask();
-            lblScore.Text = hangmanGame.GetScore().ToString();
+            lblSPGuessWord.Text = _hangmanGame.GetWordMask();
+            lblScore.Text = _hangmanGame.GetScore().ToString();
         }
 
         private void EndGame() {
-            //do scores thing
-            lblSPREsScore.Text = hangmanGame.GetScore().ToString();
-            lblSPResCorrect.Text = hangmanGame.GetWord();
+            lblSPREsScore.Text = _hangmanGame.GetScore().ToString();
+            lblSPResCorrect.Text = _hangmanGame.GetWord();
             tabControlSinglePlayer.SelectedTab = tabPageSPResult;
+            _highScores.AddScore(new ScoreItem(_hangmanGame.Dificulty, _hangmanGame.PlayerName, _hangmanGame.GetScore()));
         }
+
         /// <summary>
         /// Starts new game
         /// </summary>
-        private void btnSPPlay_Click(object sender, EventArgs e)
-        {
+        private void btnSPPlay_Click(object sender, EventArgs e) {
             Dificulty dificulty;
             if (rbSPDif.Checked) {
                 dificulty = Dificulty.Eazy;
@@ -210,36 +188,34 @@ namespace Hangman {
             }
 
             ListItem category = cbCategories.SelectedItem as ListItem;
-            hangmanGame = new HangmanGame(tbSPName.Text, dificulty, category.Text, category.Value);
+            if (category != null)
+                _hangmanGame = new HangmanGame(tbSPName.Text, dificulty, category.Value);
 
             NewGame();
 
             tabControlSinglePlayer.SelectedTab = tabPageSinglePlayerGame;
             //check later
         }
-        private void btnSPBack_Click(object sender, EventArgs e)
-        {
+
+        private void btnSPBack_Click(object sender, EventArgs e) {
             tabControlMenu.SelectedTab = tabMenu;
         }
 
-        private void Letter_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
+        private void Letter_Click(object sender, EventArgs e) {
+            Button btn = (Button) sender;
             btn.Enabled = false;
 
-            hangmanGame.GuessLetter(btn.Text[0]);
-            
+            _hangmanGame.GuessLetter(btn.Text[0]);
+
             UpdateGameState();
         }
 
-        private void btnSPGameBack_Click(object sender, EventArgs e)
-        {
+        private void btnSPGameBack_Click(object sender, EventArgs e) {
             tabControlMenu.SelectedTab = tabMenu;
             tabControlSinglePlayer.SelectedTab = tabPageSinglePlayerMenu;
         }
 
-        private void btnSPGameNew_Click(object sender, EventArgs e)
-        {
+        private void btnSPGameNew_Click(object sender, EventArgs e) {
             NewGame();
         }
 
@@ -248,17 +224,53 @@ namespace Hangman {
             tabControlSinglePlayer.SelectedTab = tabPageSinglePlayerMenu;
         }
 
-        private void btnSPResNew_Click(object sender, EventArgs e)
-        {
+        private void btnSPResNew_Click(object sender, EventArgs e) {
             tabControlSinglePlayer.SelectedTab = tabPageSinglePlayerGame;
             NewGame();
         }
-        
-        private void btnExit_Click(object sender, EventArgs e)
-        {
+
+        //High Scores
+        private void SerializeScores() {
+            using (FileStream str = new FileStream(scoresPath, FileMode.Create)) {
+                BinaryFormatter bf = new BinaryFormatter();
+                bf.Serialize(str, _highScores);
+            }
+        }
+
+        private void DeserializeScores() {
+            try {
+                using (FileStream str = File.OpenRead(scoresPath)) {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    _highScores = (Scores) bf.Deserialize(str);
+                }
+                File.Delete(scoresPath);
+            } catch (Exception) {
+                _highScores = new Scores();
+            }
+        }
+
+        private void SetHighScores() {
+            Dificulty dificulty;
+            Enum.TryParse(cbScoresDificulty.SelectedItem.ToString(), true, out dificulty);
+            List<ScoreItem> difHighScores = _highScores.GetTopScores(dificulty);
+            StringBuilder stringBuilder = new StringBuilder();
+            int i = 0;
+            foreach (ScoreItem score in difHighScores) {
+                stringBuilder.Append($"{++i}. {score.Name}{score.Score,40}\n");
+            }
+            lblHighScores.Text = stringBuilder.ToString();
+        }
+
+        private void cbScoresDificulty_SelectedIndexChanged(object sender, EventArgs e) {
+            SetHighScores();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e) {
             Close();
         }
 
-     
+        private void Hangman_FormClosing(object sender, FormClosingEventArgs e) {
+            SerializeScores();
+        }
     }
 }

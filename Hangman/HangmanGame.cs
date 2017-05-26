@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Hangman
 {
@@ -18,20 +16,16 @@ namespace Hangman
         /// <summary>
         /// Name of the Player
         /// </summary>
-        private string playerName;
+        public string PlayerName { get; }
         /// <summary>
         /// Word witch needs to be guessed
         /// </summary>
-        private HangmanWord word;
+        private HangmanWord _word;
         /// <summary>
         /// Dificulty of the game
         /// </summary>
-        private Dificulty dificulty;
-        /// <summary>
-        /// Category and its path from witch the word will be choosen
-        /// </summary>
-        private string category;
-        private string categoryPath;
+        public Dificulty Dificulty { get; }
+
         /// <summary>
         /// List of possible words from given category
         /// </summary>
@@ -39,19 +33,17 @@ namespace Hangman
         /// <summary>
         /// Score for the current game
         /// </summary>
-        private int score;
+        private int _score;
 
         /// <summary>
         /// Constructor for new game. It initalize the word and others structures for the class.
         /// </summary>
-        public HangmanGame(string playerName, Dificulty dificulty, string category, string categoryPath) {
-            this.playerName = playerName;
-            this.dificulty = dificulty;
-            this.category = category;
-            this.categoryPath = categoryPath;
+        public HangmanGame(string playerName, Dificulty dificulty, string categoryPath) {
+            PlayerName = playerName;
+            Dificulty = dificulty;
             words = GetWordsFromFile(categoryPath);
-            word = new HangmanWord(getRandomWord());
-            score = 0;
+            _word = new HangmanWord(GetRandomWord());
+            _score = 0;
         }
 
         /// <summary>
@@ -68,7 +60,7 @@ namespace Hangman
         /// Chooses a random word from the possible list of words
         /// </summary>
         /// <returns>Returns the random word</returns>
-        private string getRandomWord() {
+        private string GetRandomWord() {
             Random random = new Random();
             int randomPos = random.Next(words.Count);
             return words[randomPos];
@@ -79,7 +71,7 @@ namespace Hangman
         /// </summary>
         /// <returns>String as mask for the word</returns>
         public string GetWordMask() {
-            return word.WordMask();
+            return _word.WordMask();
         }
 
         /// <summary>
@@ -88,8 +80,8 @@ namespace Hangman
         /// <param name="letter">Guessed letter</param>
         /// <returns>Returns if the letter is correct</returns>
         public void GuessLetter(char letter) {
-            if (word.GuessLetter(letter)) {
-                score++;
+            if (_word.GuessLetter(letter)) {
+                _score++;
             }
         }
 
@@ -98,37 +90,36 @@ namespace Hangman
         /// </summary>
         /// <returns>Return if the game is over</returns>
         public bool CheckGameOver() {
-            return word.IsGameOver;
+            return _word.IsGameOver;
         }
 
         /// <summary>
         /// Cheks if the letter is correct
         /// </summary>
-        /// <param name="letter">Guessed letter</param>
         /// <returns>Returns if the letter is correct</returns>
         public bool CheckGuessed() {
-            return word.IsGuessed;
+            return _word.IsGuessed;
         }
 
         public int GetScore() {
-            return score;
+            return _score;
         }
 
         public int GetWrongCount() {
-            return word.WrongCount;
+            return _word.WrongCount;
         }
 
         public void NewGame() {
-            word = new HangmanWord(getRandomWord());
-            score = 0;
+            _word = new HangmanWord(GetRandomWord());
+            _score = 0;
         }
 
         public void NewWord() {
-            word = new HangmanWord(getRandomWord());
+            _word = new HangmanWord(GetRandomWord());
         }
 
         public string GetWord() {
-            return word.Word;
+            return _word.Word;
         }
     }
 }

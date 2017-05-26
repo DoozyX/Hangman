@@ -1,6 +1,6 @@
 ﻿namespace Hangman
 {
-    partial class Hangman
+    sealed partial class Hangman
     {
         /// <summary>
         /// Required designer variable.
@@ -105,6 +105,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnTwoBack = new System.Windows.Forms.Button();
             this.tabHighScores = new System.Windows.Forms.TabPage();
+            this.cbScoresDificulty = new System.Windows.Forms.ComboBox();
             this.lblHighScores = new System.Windows.Forms.Label();
             this.lblHighScoreTitle = new System.Windows.Forms.Label();
             this.btnHighScoreBack = new System.Windows.Forms.Button();
@@ -302,7 +303,6 @@
             // btnSPBack
             // 
             this.btnSPBack.BackColor = System.Drawing.Color.Ivory;
-            this.btnSPBack.CausesValidation = false;
             this.btnSPBack.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSPBack.Location = new System.Drawing.Point(103, 381);
             this.btnSPBack.Name = "btnSPBack";
@@ -1095,6 +1095,7 @@
             // 
             this.tabHighScores.BackgroundImage = global::Hangman.Properties.Resources.board;
             this.tabHighScores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabHighScores.Controls.Add(this.cbScoresDificulty);
             this.tabHighScores.Controls.Add(this.lblHighScores);
             this.tabHighScores.Controls.Add(this.lblHighScoreTitle);
             this.tabHighScores.Controls.Add(this.btnHighScoreBack);
@@ -1106,23 +1107,38 @@
             this.tabHighScores.Text = "High Scores";
             this.tabHighScores.UseVisualStyleBackColor = true;
             // 
+            // cbScoresDificulty
+            // 
+            this.cbScoresDificulty.Font = new System.Drawing.Font("Showcard Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbScoresDificulty.FormattingEnabled = true;
+            this.cbScoresDificulty.Items.AddRange(new object[] {
+            "Eazy",
+            "Medium",
+            "Hard"});
+            this.cbScoresDificulty.Location = new System.Drawing.Point(497, 49);
+            this.cbScoresDificulty.Name = "cbScoresDificulty";
+            this.cbScoresDificulty.Size = new System.Drawing.Size(236, 52);
+            this.cbScoresDificulty.TabIndex = 52;
+            this.cbScoresDificulty.Text = "Eazy";
+            this.cbScoresDificulty.SelectedIndexChanged += new System.EventHandler(this.cbScoresDificulty_SelectedIndexChanged);
+            // 
             // lblHighScores
             // 
             this.lblHighScores.AutoSize = true;
             this.lblHighScores.Font = new System.Drawing.Font("Showcard Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHighScores.ForeColor = System.Drawing.Color.White;
-            this.lblHighScores.Location = new System.Drawing.Point(64, 101);
+            this.lblHighScores.Location = new System.Drawing.Point(124, 144);
             this.lblHighScores.Name = "lblHighScores";
-            this.lblHighScores.Size = new System.Drawing.Size(269, 46);
+            this.lblHighScores.Size = new System.Drawing.Size(247, 46);
             this.lblHighScores.TabIndex = 45;
-            this.lblHighScores.Text = "1. Doozy - 999";
+            this.lblHighScores.Text = "1. Doozy 999";
             // 
             // lblHighScoreTitle
             // 
             this.lblHighScoreTitle.AutoSize = true;
             this.lblHighScoreTitle.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHighScoreTitle.ForeColor = System.Drawing.Color.White;
-            this.lblHighScoreTitle.Location = new System.Drawing.Point(178, 22);
+            this.lblHighScoreTitle.Location = new System.Drawing.Point(50, 32);
             this.lblHighScoreTitle.Name = "lblHighScoreTitle";
             this.lblHighScoreTitle.Size = new System.Drawing.Size(441, 79);
             this.lblHighScoreTitle.TabIndex = 44;
@@ -1207,6 +1223,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Hangman";
             this.Text = "Hangman";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Hangman_FormClosing);
             this.tabControlMenu.ResumeLayout(false);
             this.tabMenu.ResumeLayout(false);
             this.tabMenu.PerformLayout();
@@ -1325,6 +1342,7 @@
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Label lblCorrectTitle;
         private System.Windows.Forms.Label lblSPResCorrect;
+        private System.Windows.Forms.ComboBox cbScoresDificulty;
     }
 }
 
