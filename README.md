@@ -41,10 +41,10 @@ Windows Forms Project by: Slobodan Kletnikov
 
 Секоја променлива и функција содржи xml summary, со детално објаснување.
 
-/// <summary>
-/// This class represents the game Hangman where person can guess the letters of the word until he fail 6 letters
-/// </summary>
-class HangmanGame {
+        /// <summary>
+        /// This class represents the game Hangman where person can guess the letters of the word until he fail 6 letters
+        /// </summary>
+        class HangmanGame {
         /// <summary>
         /// Name of the Player
         /// </summary>
