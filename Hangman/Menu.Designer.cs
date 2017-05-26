@@ -52,6 +52,9 @@
             this.tbSPName = new System.Windows.Forms.TextBox();
             this.lblSPName = new System.Windows.Forms.Label();
             this.tabPageSinglePlayerGame = new System.Windows.Forms.TabPage();
+            this.lblScore = new System.Windows.Forms.Label();
+            this.lblScore2 = new System.Windows.Forms.Label();
+            this.lblSPGuessWord = new System.Windows.Forms.Label();
             this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
@@ -87,22 +90,25 @@
             this.pbBody = new System.Windows.Forms.PictureBox();
             this.pbHead = new System.Windows.Forms.PictureBox();
             this.pbWood = new System.Windows.Forms.PictureBox();
+            this.tabPageSPResult = new System.Windows.Forms.TabPage();
+            this.lblSPREsScore = new System.Windows.Forms.Label();
+            this.lblSPRes2 = new System.Windows.Forms.Label();
+            this.btnSPResNew = new System.Windows.Forms.Button();
+            this.btnSPResBack = new System.Windows.Forms.Button();
+            this.lblSPRes1 = new System.Windows.Forms.Label();
             this.tabTwoPlayers = new System.Windows.Forms.TabPage();
+            this.lblSoon = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnTwoBack = new System.Windows.Forms.Button();
             this.tabHighScores = new System.Windows.Forms.TabPage();
             this.btnHighScoreBack = new System.Windows.Forms.Button();
             this.tabHelp = new System.Windows.Forms.TabPage();
             this.btmHelpBack = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tabPageSPResult = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblScore2 = new System.Windows.Forms.Label();
-            this.lblScore = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblHelpTitle = new System.Windows.Forms.Label();
+            this.lblHelp = new System.Windows.Forms.Label();
+            this.lblHighScores = new System.Windows.Forms.Label();
+            this.lblHighScoreTitle = new System.Windows.Forms.Label();
             this.tabControlMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenuHangman)).BeginInit();
@@ -117,11 +123,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBody)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHead)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWood)).BeginInit();
+            this.tabPageSPResult.SuspendLayout();
             this.tabTwoPlayers.SuspendLayout();
             this.tabHighScores.SuspendLayout();
             this.tabHelp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.tabPageSPResult.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMenu
@@ -407,7 +413,7 @@
             this.tabPageSinglePlayerGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPageSinglePlayerGame.Controls.Add(this.lblScore);
             this.tabPageSinglePlayerGame.Controls.Add(this.lblScore2);
-            this.tabPageSinglePlayerGame.Controls.Add(this.label1);
+            this.tabPageSinglePlayerGame.Controls.Add(this.lblSPGuessWord);
             this.tabPageSinglePlayerGame.Controls.Add(this.button25);
             this.tabPageSinglePlayerGame.Controls.Add(this.button26);
             this.tabPageSinglePlayerGame.Controls.Add(this.button27);
@@ -450,6 +456,39 @@
             this.tabPageSinglePlayerGame.TabIndex = 1;
             this.tabPageSinglePlayerGame.Text = "Game";
             this.tabPageSinglePlayerGame.UseVisualStyleBackColor = true;
+            // 
+            // lblScore
+            // 
+            this.lblScore.AutoSize = true;
+            this.lblScore.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScore.ForeColor = System.Drawing.Color.White;
+            this.lblScore.Location = new System.Drawing.Point(659, 39);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(72, 79);
+            this.lblScore.TabIndex = 41;
+            this.lblScore.Text = "0";
+            // 
+            // lblScore2
+            // 
+            this.lblScore2.AutoSize = true;
+            this.lblScore2.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScore2.ForeColor = System.Drawing.Color.White;
+            this.lblScore2.Location = new System.Drawing.Point(421, 39);
+            this.lblScore2.Name = "lblScore2";
+            this.lblScore2.Size = new System.Drawing.Size(250, 79);
+            this.lblScore2.TabIndex = 40;
+            this.lblScore2.Text = "Score:";
+            // 
+            // lblSPGuessWord
+            // 
+            this.lblSPGuessWord.AutoSize = true;
+            this.lblSPGuessWord.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSPGuessWord.ForeColor = System.Drawing.Color.White;
+            this.lblSPGuessWord.Location = new System.Drawing.Point(315, 170);
+            this.lblSPGuessWord.Name = "lblSPGuessWord";
+            this.lblSPGuessWord.Size = new System.Drawing.Size(426, 79);
+            this.lblSPGuessWord.TabIndex = 39;
+            this.lblSPGuessWord.Text = "_ _ _ _ _ _ _ _ _";
             // 
             // button25
             // 
@@ -812,6 +851,7 @@
             this.btnSPGameBack.TabIndex = 10;
             this.btnSPGameBack.Text = "Back";
             this.btnSPGameBack.UseVisualStyleBackColor = false;
+            this.btnSPGameBack.Click += new System.EventHandler(this.btnSPGameBack_Click);
             // 
             // pbRightLeg
             // 
@@ -876,11 +916,89 @@
             this.pbWood.TabIndex = 0;
             this.pbWood.TabStop = false;
             // 
+            // tabPageSPResult
+            // 
+            this.tabPageSPResult.BackgroundImage = global::Hangman.Properties.Resources.board;
+            this.tabPageSPResult.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageSPResult.Controls.Add(this.lblSPREsScore);
+            this.tabPageSPResult.Controls.Add(this.lblSPRes2);
+            this.tabPageSPResult.Controls.Add(this.btnSPResNew);
+            this.tabPageSPResult.Controls.Add(this.btnSPResBack);
+            this.tabPageSPResult.Controls.Add(this.lblSPRes1);
+            this.tabPageSPResult.Location = new System.Drawing.Point(4, 22);
+            this.tabPageSPResult.Name = "tabPageSPResult";
+            this.tabPageSPResult.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageSPResult.Size = new System.Drawing.Size(787, 544);
+            this.tabPageSPResult.TabIndex = 2;
+            this.tabPageSPResult.Text = "Result";
+            this.tabPageSPResult.UseVisualStyleBackColor = true;
+            // 
+            // lblSPREsScore
+            // 
+            this.lblSPREsScore.AutoSize = true;
+            this.lblSPREsScore.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSPREsScore.ForeColor = System.Drawing.Color.White;
+            this.lblSPREsScore.Location = new System.Drawing.Point(439, 210);
+            this.lblSPREsScore.Name = "lblSPREsScore";
+            this.lblSPREsScore.Size = new System.Drawing.Size(72, 79);
+            this.lblSPREsScore.TabIndex = 45;
+            this.lblSPREsScore.Text = "0";
+            // 
+            // lblSPRes2
+            // 
+            this.lblSPRes2.AutoSize = true;
+            this.lblSPRes2.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSPRes2.ForeColor = System.Drawing.Color.White;
+            this.lblSPRes2.Location = new System.Drawing.Point(201, 210);
+            this.lblSPRes2.Name = "lblSPRes2";
+            this.lblSPRes2.Size = new System.Drawing.Size(250, 79);
+            this.lblSPRes2.TabIndex = 44;
+            this.lblSPRes2.Text = "Score:";
+            // 
+            // btnSPResNew
+            // 
+            this.btnSPResNew.BackColor = System.Drawing.Color.Ivory;
+            this.btnSPResNew.CausesValidation = false;
+            this.btnSPResNew.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSPResNew.Location = new System.Drawing.Point(380, 322);
+            this.btnSPResNew.Name = "btnSPResNew";
+            this.btnSPResNew.Size = new System.Drawing.Size(171, 50);
+            this.btnSPResNew.TabIndex = 43;
+            this.btnSPResNew.Text = "New Game";
+            this.btnSPResNew.UseVisualStyleBackColor = false;
+            this.btnSPResNew.Click += new System.EventHandler(this.btnSPResNew_Click);
+            // 
+            // btnSPResBack
+            // 
+            this.btnSPResBack.BackColor = System.Drawing.Color.Ivory;
+            this.btnSPResBack.CausesValidation = false;
+            this.btnSPResBack.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSPResBack.Location = new System.Drawing.Point(202, 322);
+            this.btnSPResBack.Name = "btnSPResBack";
+            this.btnSPResBack.Size = new System.Drawing.Size(150, 50);
+            this.btnSPResBack.TabIndex = 42;
+            this.btnSPResBack.Text = "Back";
+            this.btnSPResBack.UseVisualStyleBackColor = false;
+            this.btnSPResBack.Click += new System.EventHandler(this.btnSPResBack_Click);
+            // 
+            // lblSPRes1
+            // 
+            this.lblSPRes1.AutoSize = true;
+            this.lblSPRes1.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSPRes1.ForeColor = System.Drawing.Color.White;
+            this.lblSPRes1.Location = new System.Drawing.Point(201, 106);
+            this.lblSPRes1.Name = "lblSPRes1";
+            this.lblSPRes1.Size = new System.Drawing.Size(332, 79);
+            this.lblSPRes1.TabIndex = 41;
+            this.lblSPRes1.Text = "You Lost";
+            // 
             // tabTwoPlayers
             // 
             this.tabTwoPlayers.BackColor = System.Drawing.Color.Transparent;
             this.tabTwoPlayers.BackgroundImage = global::Hangman.Properties.Resources.board;
             this.tabTwoPlayers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabTwoPlayers.Controls.Add(this.lblSoon);
+            this.tabTwoPlayers.Controls.Add(this.label1);
             this.tabTwoPlayers.Controls.Add(this.btnTwoBack);
             this.tabTwoPlayers.Location = new System.Drawing.Point(4, 22);
             this.tabTwoPlayers.Name = "tabTwoPlayers";
@@ -888,6 +1006,26 @@
             this.tabTwoPlayers.Size = new System.Drawing.Size(787, 544);
             this.tabTwoPlayers.TabIndex = 2;
             this.tabTwoPlayers.Text = "Two Players";
+            // 
+            // lblSoon
+            // 
+            this.lblSoon.AutoSize = true;
+            this.lblSoon.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoon.ForeColor = System.Drawing.Color.White;
+            this.lblSoon.Location = new System.Drawing.Point(164, 201);
+            this.lblSoon.Name = "lblSoon";
+            this.lblSoon.Size = new System.Drawing.Size(484, 79);
+            this.lblSoon.TabIndex = 41;
+            this.lblSoon.Text = "Coming Soon!";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "label1";
             // 
             // btnTwoBack
             // 
@@ -905,6 +1043,8 @@
             // 
             this.tabHighScores.BackgroundImage = global::Hangman.Properties.Resources.board;
             this.tabHighScores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabHighScores.Controls.Add(this.lblHighScores);
+            this.tabHighScores.Controls.Add(this.lblHighScoreTitle);
             this.tabHighScores.Controls.Add(this.btnHighScoreBack);
             this.tabHighScores.Location = new System.Drawing.Point(4, 22);
             this.tabHighScores.Name = "tabHighScores";
@@ -930,6 +1070,8 @@
             // 
             this.tabHelp.BackgroundImage = global::Hangman.Properties.Resources.board;
             this.tabHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabHelp.Controls.Add(this.lblHelp);
+            this.tabHelp.Controls.Add(this.lblHelpTitle);
             this.tabHelp.Controls.Add(this.btmHelpBack);
             this.tabHelp.Location = new System.Drawing.Point(4, 22);
             this.tabHelp.Name = "tabHelp";
@@ -955,112 +1097,49 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // tabPageSPResult
+            // lblHelpTitle
             // 
-            this.tabPageSPResult.BackgroundImage = global::Hangman.Properties.Resources.board;
-            this.tabPageSPResult.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPageSPResult.Controls.Add(this.label3);
-            this.tabPageSPResult.Controls.Add(this.label4);
-            this.tabPageSPResult.Controls.Add(this.button1);
-            this.tabPageSPResult.Controls.Add(this.button2);
-            this.tabPageSPResult.Controls.Add(this.label2);
-            this.tabPageSPResult.Location = new System.Drawing.Point(4, 22);
-            this.tabPageSPResult.Name = "tabPageSPResult";
-            this.tabPageSPResult.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSPResult.Size = new System.Drawing.Size(787, 544);
-            this.tabPageSPResult.TabIndex = 2;
-            this.tabPageSPResult.Text = "Result";
-            this.tabPageSPResult.UseVisualStyleBackColor = true;
+            this.lblHelpTitle.AutoSize = true;
+            this.lblHelpTitle.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHelpTitle.ForeColor = System.Drawing.Color.White;
+            this.lblHelpTitle.Location = new System.Drawing.Point(282, 21);
+            this.lblHelpTitle.Name = "lblHelpTitle";
+            this.lblHelpTitle.Size = new System.Drawing.Size(197, 79);
+            this.lblHelpTitle.TabIndex = 42;
+            this.lblHelpTitle.Text = "Help";
             // 
-            // label1
+            // lblHelp
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(315, 170);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(426, 79);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "_ _ _ _ _ _ _ _ _";
+            this.lblHelp.AutoSize = true;
+            this.lblHelp.Font = new System.Drawing.Font("Showcard Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHelp.ForeColor = System.Drawing.Color.White;
+            this.lblHelp.Location = new System.Drawing.Point(58, 99);
+            this.lblHelp.Name = "lblHelp";
+            this.lblHelp.Size = new System.Drawing.Size(590, 46);
+            this.lblHelp.TabIndex = 43;
+            this.lblHelp.Text = "HelpHelpHelpHelpHelpHelp";
             // 
-            // lblScore2
+            // lblHighScores
             // 
-            this.lblScore2.AutoSize = true;
-            this.lblScore2.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScore2.ForeColor = System.Drawing.Color.White;
-            this.lblScore2.Location = new System.Drawing.Point(421, 39);
-            this.lblScore2.Name = "lblScore2";
-            this.lblScore2.Size = new System.Drawing.Size(250, 79);
-            this.lblScore2.TabIndex = 40;
-            this.lblScore2.Text = "Score:";
+            this.lblHighScores.AutoSize = true;
+            this.lblHighScores.Font = new System.Drawing.Font("Showcard Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHighScores.ForeColor = System.Drawing.Color.White;
+            this.lblHighScores.Location = new System.Drawing.Point(64, 101);
+            this.lblHighScores.Name = "lblHighScores";
+            this.lblHighScores.Size = new System.Drawing.Size(269, 46);
+            this.lblHighScores.TabIndex = 45;
+            this.lblHighScores.Text = "1. Doozy - 999";
             // 
-            // lblScore
+            // lblHighScoreTitle
             // 
-            this.lblScore.AutoSize = true;
-            this.lblScore.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScore.ForeColor = System.Drawing.Color.White;
-            this.lblScore.Location = new System.Drawing.Point(659, 39);
-            this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(72, 79);
-            this.lblScore.TabIndex = 41;
-            this.lblScore.Text = "0";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(201, 106);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(332, 79);
-            this.label2.TabIndex = 41;
-            this.label2.Text = "You Lost";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Ivory;
-            this.button1.CausesValidation = false;
-            this.button1.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(380, 322);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 50);
-            this.button1.TabIndex = 43;
-            this.button1.Text = "New Game";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Ivory;
-            this.button2.CausesValidation = false;
-            this.button2.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(202, 322);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 50);
-            this.button2.TabIndex = 42;
-            this.button2.Text = "Back";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(439, 210);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 79);
-            this.label3.TabIndex = 45;
-            this.label3.Text = "0";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(201, 210);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(250, 79);
-            this.label4.TabIndex = 44;
-            this.label4.Text = "Score:";
+            this.lblHighScoreTitle.AutoSize = true;
+            this.lblHighScoreTitle.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHighScoreTitle.ForeColor = System.Drawing.Color.White;
+            this.lblHighScoreTitle.Location = new System.Drawing.Point(178, 22);
+            this.lblHighScoreTitle.Name = "lblHighScoreTitle";
+            this.lblHighScoreTitle.Size = new System.Drawing.Size(441, 79);
+            this.lblHighScoreTitle.TabIndex = 44;
+            this.lblHighScoreTitle.Text = "High Scores";
             // 
             // Hangman
             // 
@@ -1093,12 +1172,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBody)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHead)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWood)).EndInit();
-            this.tabTwoPlayers.ResumeLayout(false);
-            this.tabHighScores.ResumeLayout(false);
-            this.tabHelp.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.tabPageSPResult.ResumeLayout(false);
             this.tabPageSPResult.PerformLayout();
+            this.tabTwoPlayers.ResumeLayout(false);
+            this.tabTwoPlayers.PerformLayout();
+            this.tabHighScores.ResumeLayout(false);
+            this.tabHighScores.PerformLayout();
+            this.tabHelp.ResumeLayout(false);
+            this.tabHelp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1173,12 +1255,18 @@
         private System.Windows.Forms.TabPage tabPageSPResult;
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Label lblScore2;
+        private System.Windows.Forms.Label lblSPGuessWord;
+        private System.Windows.Forms.Label lblSPREsScore;
+        private System.Windows.Forms.Label lblSPRes2;
+        private System.Windows.Forms.Button btnSPResNew;
+        private System.Windows.Forms.Button btnSPResBack;
+        private System.Windows.Forms.Label lblSPRes1;
+        private System.Windows.Forms.Label lblSoon;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblHelp;
+        private System.Windows.Forms.Label lblHelpTitle;
+        private System.Windows.Forms.Label lblHighScores;
+        private System.Windows.Forms.Label lblHighScoreTitle;
     }
 }
 
