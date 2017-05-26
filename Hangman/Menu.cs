@@ -11,14 +11,17 @@ using ListItem = System.Web.UI.WebControls.ListItem;
 
 namespace Hangman {
     public sealed partial class Hangman : Form {
-        private static readonly string scoresPath = @"../../Resources/scores.txt";
-        private static readonly string wordsPath = @"../../Resources/words/";
+        private const string ScoresPath = @"../../Resources/scores.txt";
+        private const string WordsPath = @"../../Resources/words/";
 
         /// <summary>
         /// Current game playing
         /// </summary>
         private HangmanGame _hangmanGame;
 
+        /// <summary>
+        /// High Scores for the game
+        /// </summary>
         private Scores _highScores;
 
         /// <summary>
@@ -45,7 +48,7 @@ namespace Hangman {
 
             //find categories
 
-            string[] fileEntries = Directory.GetFiles(wordsPath);
+            string[] fileEntries = Directory.GetFiles(WordsPath);
             List<ListItem> categories =
                 fileEntries.Select(fileName => new ListItem(Path.GetFileNameWithoutExtension(fileName), fileName))
                     .ToList();
@@ -55,7 +58,9 @@ namespace Hangman {
             DeserializeScores();
         }
 
-        //Menu Page
+        /// <summary>
+        /// Swaping between view in Menu Form
+        /// </summary>
         private void btnSinglePlayer_Click(object sender, EventArgs e) {
             tabControlMenu.SelectedTab = tabSinglePlayer;
             tbSPName.Select();
@@ -74,23 +79,61 @@ namespace Hangman {
             tabControlMenu.SelectedTab = tabHelp;
         }
 
-        //Two Players
+        /// <summary>
+        /// Swaping between view in Two Players
+        /// </summary>
         private void btnTwoBack_Click(object sender, EventArgs e) {
             tabControlMenu.SelectedTab = tabMenu;
         }
 
-        //High Scores
+        /// <summary>
+        /// Swaping between view in High Scores
+        /// </summary>
         private void btnHighScoreBack_Click(object sender, EventArgs e) {
             tabControlMenu.SelectedTab = tabMenu;
         }
 
-        //Help
+        /// <summary>
+        /// Swaping between view in Help
+        /// </summary>
         private void btmHelpBack_Click(object sender, EventArgs e) {
             tabControlMenu.SelectedTab = tabMenu;
         }
 
 
-        //Single Player
+        /// <summary>
+        /// Swaping between view in Sinle Player
+        /// </summary>
+        private void btnSPBack_Click(object sender, EventArgs e)
+        {
+            tabControlMenu.SelectedTab = tabMenu;
+        }
+
+        private void btnSPGameBack_Click(object sender, EventArgs e)
+        {
+            tabControlMenu.SelectedTab = tabMenu;
+            tabControlSinglePlayer.SelectedTab = tabPageSinglePlayerMenu;
+        }
+
+        private void btnSPGameNew_Click(object sender, EventArgs e)
+        {
+            NewGame();
+        }
+
+        private void btnSPResBack_Click(object sender, EventArgs e)
+        {
+            tabControlMenu.SelectedTab = tabMenu;
+            tabControlSinglePlayer.SelectedTab = tabPageSinglePlayerMenu;
+        }
+
+        private void btnSPResNew_Click(object sender, EventArgs e)
+        {
+            tabControlSinglePlayer.SelectedTab = tabPageSinglePlayerGame;
+            NewGame();
+        }
+        /// <summary>
+        /// Validates that a name is entered
+        /// </summary>
         private void tbSPName_Validating(object sender, CancelEventArgs e) {
             if (tbSPName.Text.Trim().Length == 0) {
                 e.Cancel = true;
@@ -112,13 +155,18 @@ namespace Hangman {
             pbLeftLeg.Visible = false;
             pbRightLeg.Visible = false;
         }
-
+        /// <summary>
+        /// Reset the letters to active
+        /// </summary>
         private void ResetLetters() {
             foreach (Button btn in pnlLetters.Controls) {
                 btn.Enabled = true;
             }
         }
 
+        /// <summary>
+        /// Set variables for new game
+        /// </summary>
         private void NewGame() {
             ClearSpMan();
             ResetLetters();
@@ -127,6 +175,9 @@ namespace Hangman {
             lblScore.Text = _hangmanGame.GetScore().ToString();
         }
 
+        /// <summary>
+        /// Checks for uptades in the current state of the game
+        /// </summary>
         private void UpdateGameState() {
             int wrong = _hangmanGame.GetWrongCount();
             switch (wrong) {
@@ -167,6 +218,9 @@ namespace Hangman {
             lblScore.Text = _hangmanGame.GetScore().ToString();
         }
 
+        /// <summary>
+        /// Resets the elements after the games and and adds the score
+        /// </summary>
         private void EndGame() {
             lblSPREsScore.Text = _hangmanGame.GetScore().ToString();
             lblSPResCorrect.Text = _hangmanGame.GetWord();
@@ -194,13 +248,11 @@ namespace Hangman {
             NewGame();
 
             tabControlSinglePlayer.SelectedTab = tabPageSinglePlayerGame;
-            //check later
         }
 
-        private void btnSPBack_Click(object sender, EventArgs e) {
-            tabControlMenu.SelectedTab = tabMenu;
-        }
-
+        /// <summary>
+        /// Whenever a letter is clicked the button is disabled, puts the letter in the word to be checked, and updates the view
+        /// </summary>
         private void Letter_Click(object sender, EventArgs e) {
             Button btn = (Button) sender;
             btn.Enabled = false;
@@ -210,45 +262,35 @@ namespace Hangman {
             UpdateGameState();
         }
 
-        private void btnSPGameBack_Click(object sender, EventArgs e) {
-            tabControlMenu.SelectedTab = tabMenu;
-            tabControlSinglePlayer.SelectedTab = tabPageSinglePlayerMenu;
-        }
 
-        private void btnSPGameNew_Click(object sender, EventArgs e) {
-            NewGame();
-        }
-
-        private void btnSPResBack_Click(object sender, EventArgs e) {
-            tabControlMenu.SelectedTab = tabMenu;
-            tabControlSinglePlayer.SelectedTab = tabPageSinglePlayerMenu;
-        }
-
-        private void btnSPResNew_Click(object sender, EventArgs e) {
-            tabControlSinglePlayer.SelectedTab = tabPageSinglePlayerGame;
-            NewGame();
-        }
-
-        //High Scores
+        
+        /// <summary>
+        /// Saves the scores
+        /// </summary>
         private void SerializeScores() {
-            using (FileStream str = new FileStream(scoresPath, FileMode.Create)) {
+            using (FileStream str = new FileStream(ScoresPath, FileMode.Create)) {
                 BinaryFormatter bf = new BinaryFormatter();
                 bf.Serialize(str, _highScores);
             }
         }
-
+        /// <summary>
+        /// Loads the high scores
+        /// </summary>
         private void DeserializeScores() {
             try {
-                using (FileStream str = File.OpenRead(scoresPath)) {
+                using (FileStream str = File.OpenRead(ScoresPath)) {
                     BinaryFormatter bf = new BinaryFormatter();
                     _highScores = (Scores) bf.Deserialize(str);
                 }
-                File.Delete(scoresPath);
+                File.Delete(ScoresPath);
             } catch (Exception) {
                 _highScores = new Scores();
             }
         }
 
+        /// <summary>
+        /// Writes the top high scores on the view
+        /// </summary>
         private void SetHighScores() {
             Dificulty dificulty;
             Enum.TryParse(cbScoresDificulty.SelectedItem.ToString(), true, out dificulty);
@@ -256,21 +298,32 @@ namespace Hangman {
             StringBuilder stringBuilder = new StringBuilder();
             int i = 0;
             foreach (ScoreItem score in difHighScores) {
-                stringBuilder.Append($"{++i}. {score.Name}{score.Score,40}\n");
+                stringBuilder.Append($"{++i}. {score.Name,-20}{score.Score}\n");
             }
             lblHighScores.Text = stringBuilder.ToString();
         }
 
+        /// <summary>
+        /// Changes the high scores depening on dificulty
+        /// </summary>
         private void cbScoresDificulty_SelectedIndexChanged(object sender, EventArgs e) {
             SetHighScores();
         }
 
+        /// <summary>
+        /// Closes the game
+        /// </summary>
         private void btnExit_Click(object sender, EventArgs e) {
             Close();
         }
 
+        /// <summary>
+        /// Whenever the game is closed scores are saved
+        /// </summary>
         private void Hangman_FormClosing(object sender, FormClosingEventArgs e) {
             SerializeScores();
         }
+
+
     }
 }

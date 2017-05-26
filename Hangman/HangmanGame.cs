@@ -5,13 +5,18 @@ using System.Linq;
 
 namespace Hangman
 {
+    /// <summary>
+    /// Enumeration for possible dificulties of the game
+    /// </summary>
     enum Dificulty
     {
         Eazy,
         Medium,
         Hard
     }
-          
+    /// <summary>
+    /// This class represents the game Hangman where person can guess the letters of the word until he fail 6 letters
+    /// </summary>
     class HangmanGame {
         /// <summary>
         /// Name of the Player
@@ -94,30 +99,46 @@ namespace Hangman
         }
 
         /// <summary>
-        /// Cheks if the letter is correct
+        /// Checks if the letter is correct
         /// </summary>
         /// <returns>Returns if the letter is correct</returns>
         public bool CheckGuessed() {
             return _word.IsGuessed;
         }
 
+        /// <summary>
+        /// Returns the score
+        /// </summary>
+        /// <returns/>Returns the score of the game/returns>
         public int GetScore() {
             return _score;
         }
 
+        /// <summary>
+        /// Returns number of wrong letter have been guesed
+        /// </summary>
+        /// <returns>Returns number of wrong letter have been guesed</returns>
         public int GetWrongCount() {
             return _word.WrongCount;
         }
 
+        /// <summary>
+        /// Starts a new game
+        /// </summary>
         public void NewGame() {
             _word = new HangmanWord(GetRandomWord());
             _score = 0;
         }
-
+        /// <summary>
+        /// A new word for guessing is generated
+        /// </summary>
         public void NewWord() {
             _word = new HangmanWord(GetRandomWord());
         }
 
+        /// <summary>
+        /// Returns the word
+        /// </summary>
         public string GetWord() {
             return _word.Word;
         }

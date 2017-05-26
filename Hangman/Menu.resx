@@ -117,6 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblHelp.Text" xml:space="preserve">
+    <value>Hangman is a paper and pencil 
+guessing game for two or more
+players.One player thinks of a word,
+phrase or sentence and the other tries 
+to guess it by suggesting letters or 
+numbers, within a certain number of 
+guesses. In this game u can also play 
+it alone by computer 
+                                                      thinking words.</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pbRightLeg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

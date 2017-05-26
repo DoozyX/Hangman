@@ -112,8 +112,8 @@
             this.tabHelp = new System.Windows.Forms.TabPage();
             this.lblHelp = new System.Windows.Forms.Label();
             this.lblHelpTitle = new System.Windows.Forms.Label();
-            this.btmHelpBack = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btmHelpBack = new System.Windows.Forms.Button();
             this.tabControlMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenuHangman)).BeginInit();
@@ -1160,9 +1160,9 @@
             // 
             this.tabHelp.BackgroundImage = global::Hangman.Properties.Resources.board;
             this.tabHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabHelp.Controls.Add(this.btmHelpBack);
             this.tabHelp.Controls.Add(this.lblHelp);
             this.tabHelp.Controls.Add(this.lblHelpTitle);
-            this.tabHelp.Controls.Add(this.btmHelpBack);
             this.tabHelp.Location = new System.Drawing.Point(4, 22);
             this.tabHelp.Name = "tabHelp";
             this.tabHelp.Padding = new System.Windows.Forms.Padding(3);
@@ -1174,13 +1174,13 @@
             // lblHelp
             // 
             this.lblHelp.AutoSize = true;
-            this.lblHelp.Font = new System.Drawing.Font("Showcard Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHelp.Font = new System.Drawing.Font("Showcard Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHelp.ForeColor = System.Drawing.Color.White;
-            this.lblHelp.Location = new System.Drawing.Point(58, 99);
+            this.lblHelp.Location = new System.Drawing.Point(24, 98);
             this.lblHelp.Name = "lblHelp";
-            this.lblHelp.Size = new System.Drawing.Size(590, 46);
+            this.lblHelp.Size = new System.Drawing.Size(763, 396);
             this.lblHelp.TabIndex = 43;
-            this.lblHelp.Text = "HelpHelpHelpHelpHelpHelp";
+            this.lblHelp.Text = resources.GetString("lblHelp.Text");
             // 
             // lblHelpTitle
             // 
@@ -1193,21 +1193,21 @@
             this.lblHelpTitle.TabIndex = 42;
             this.lblHelpTitle.Text = "Help";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // btmHelpBack
             // 
             this.btmHelpBack.BackColor = System.Drawing.Color.Ivory;
             this.btmHelpBack.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btmHelpBack.Location = new System.Drawing.Point(56, 442);
+            this.btmHelpBack.Location = new System.Drawing.Point(68, 451);
             this.btmHelpBack.Name = "btmHelpBack";
             this.btmHelpBack.Size = new System.Drawing.Size(300, 50);
-            this.btmHelpBack.TabIndex = 2;
+            this.btmHelpBack.TabIndex = 44;
             this.btmHelpBack.Text = "Back";
             this.btmHelpBack.UseVisualStyleBackColor = false;
             this.btmHelpBack.Click += new System.EventHandler(this.btmHelpBack_Click);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // Hangman
             // 
@@ -1272,7 +1272,6 @@
         private System.Windows.Forms.TabPage tabHelp;
         private System.Windows.Forms.Button btnTwoBack;
         private System.Windows.Forms.Button btnHighScoreBack;
-        private System.Windows.Forms.Button btmHelpBack;
         private System.Windows.Forms.PictureBox pbMenuHangman;
         private System.Windows.Forms.TabControl tabControlSinglePlayer;
         private System.Windows.Forms.TabPage tabPageSinglePlayerMenu;
@@ -1343,6 +1342,7 @@
         private System.Windows.Forms.Label lblCorrectTitle;
         private System.Windows.Forms.Label lblSPResCorrect;
         private System.Windows.Forms.ComboBox cbScoresDificulty;
+        private System.Windows.Forms.Button btmHelpBack;
     }
 }
 
