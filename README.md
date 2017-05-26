@@ -40,6 +40,7 @@ Windows Forms Project by: Slobodan Kletnikov
 Главните податоци и функции за играта се чуваат во класа HangmanGamе. Главен податок е класата HangmanWord во која се чуваат податоците и состојбата за тој збор.
 
 Секоја променлива и функција содржи xml summary, со детално објаснување.
+
 /// <summary>
 /// This class represents the game Hangman where person can guess the letters of the word until he fail 6 letters
 /// </summary>
