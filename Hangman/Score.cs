@@ -3,7 +3,7 @@
 namespace Hangman
 {
     [Serializable]
-    class ScoreItem : IComparable<ScoreItem>
+    public class ScoreItem : IComparable<ScoreItem>
     {
         /// <summary>
         /// Stores the dificulty of the specific Score

@@ -202,7 +202,7 @@ namespace Hangman {
                 default:
                     pbRightLeg.Visible = true;
                     EndGame();
-                    break;
+                    return;
             }
             //for future
             if (_hangmanGame.CheckGameOver()) {
@@ -267,6 +267,7 @@ namespace Hangman {
         /// <summary>
         /// Saves the scores
         /// </summary>
+        /// 
         private void SerializeScores() {
             using (FileStream str = new FileStream(ScoresPath, FileMode.Create)) {
                 BinaryFormatter bf = new BinaryFormatter();
@@ -276,7 +277,7 @@ namespace Hangman {
         /// <summary>
         /// Loads the high scores
         /// </summary>
-        private void DeserializeScores() {
+        private void DeserializeScores() { 
             try {
                 using (FileStream str = File.OpenRead(ScoresPath)) {
                     BinaryFormatter bf = new BinaryFormatter();

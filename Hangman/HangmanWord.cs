@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 
 namespace Hangman {
@@ -74,7 +73,7 @@ namespace Hangman {
             StringBuilder guess = new StringBuilder();
             for (int i = 0; i < Word.Length; i++) {
                 char c = Word[i];
-                c = Char.ToUpper(c);
+                c = char.ToUpper(c);
                 if (WordLetters.Contains(c)) {
                     guess.Append("_");
                 } else {

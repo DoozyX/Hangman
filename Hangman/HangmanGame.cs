@@ -8,7 +8,7 @@ namespace Hangman
     /// <summary>
     /// Enumeration for possible dificulties of the game
     /// </summary>
-    enum Dificulty
+    public enum Dificulty
     {
         Eazy,
         Medium,
@@ -17,7 +17,7 @@ namespace Hangman
     /// <summary>
     /// This class represents the game Hangman where person can guess the letters of the word until he fail 6 letters
     /// </summary>
-    class HangmanGame {
+    public class HangmanGame {
         /// <summary>
         /// Name of the Player
         /// </summary>
@@ -34,7 +34,7 @@ namespace Hangman
         /// <summary>
         /// List of possible words from given category
         /// </summary>
-        private List<string> words;
+        private readonly List<string> _words;
         /// <summary>
         /// Score for the current game
         /// </summary>
@@ -46,7 +46,7 @@ namespace Hangman
         public HangmanGame(string playerName, Dificulty dificulty, string categoryPath) {
             PlayerName = playerName;
             Dificulty = dificulty;
-            words = GetWordsFromFile(categoryPath);
+            _words = GetWordsFromFile(categoryPath);
             _word = new HangmanWord(GetRandomWord());
             _score = 0;
         }
@@ -54,11 +54,8 @@ namespace Hangman
         /// <summary>
         /// Sets the list of all possible words from the given path
         /// </summary>
-        private List<string> GetWordsFromFile(string path) {
-            if (File.Exists(path)) {
-                return File.ReadAllLines(path).ToList();
-            }
-            return new List<string>();
+        private static List<string> GetWordsFromFile(string path) {
+            return File.Exists(path) ? File.ReadAllLines(path).ToList() : new List<string>();
         }
 
         /// <summary>
@@ -67,8 +64,8 @@ namespace Hangman
         /// <returns>Returns the random word</returns>
         private string GetRandomWord() {
             Random random = new Random();
-            int randomPos = random.Next(words.Count);
-            return words[randomPos];
+            int randomPos = random.Next(_words.Count);
+            return _words[randomPos];
         }
 
         /// <summary>
