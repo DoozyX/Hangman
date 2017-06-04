@@ -84,12 +84,6 @@
             this.lblSPGuessWord = new System.Windows.Forms.Label();
             this.btnSPGameNew = new System.Windows.Forms.Button();
             this.btnSPGameBack = new System.Windows.Forms.Button();
-            this.pbRightLeg = new System.Windows.Forms.PictureBox();
-            this.pbLeftLeg = new System.Windows.Forms.PictureBox();
-            this.pbRightArm = new System.Windows.Forms.PictureBox();
-            this.pbLeftArm = new System.Windows.Forms.PictureBox();
-            this.pbBody = new System.Windows.Forms.PictureBox();
-            this.pbHead = new System.Windows.Forms.PictureBox();
             this.pbWood = new System.Windows.Forms.PictureBox();
             this.tabPageSPResult = new System.Windows.Forms.TabPage();
             this.lblSPResCorrect = new System.Windows.Forms.Label();
@@ -101,19 +95,91 @@
             this.btnSPResBack = new System.Windows.Forms.Button();
             this.lblSPRes1 = new System.Windows.Forms.Label();
             this.tabTwoPlayers = new System.Windows.Forms.TabPage();
-            this.lblSoon = new System.Windows.Forms.Label();
+            this.tabControlTwoPlayers = new System.Windows.Forms.TabControl();
+            this.tabPageTPNames = new System.Windows.Forms.TabPage();
+            this.btnTPNamesNext = new System.Windows.Forms.Button();
+            this.tbTPPlayer2Name = new System.Windows.Forms.TextBox();
+            this.tbTPPlayer1Name = new System.Windows.Forms.TextBox();
+            this.lblPlayer2Name = new System.Windows.Forms.Label();
+            this.lblPlayer1Name = new System.Windows.Forms.Label();
+            this.btnTPBack = new System.Windows.Forms.Button();
+            this.tabPageTWWordSelect = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnTwoBack = new System.Windows.Forms.Button();
             this.tabHighScores = new System.Windows.Forms.TabPage();
             this.cbScoresDificulty = new System.Windows.Forms.ComboBox();
             this.lblHighScores = new System.Windows.Forms.Label();
             this.lblHighScoreTitle = new System.Windows.Forms.Label();
             this.btnHighScoreBack = new System.Windows.Forms.Button();
             this.tabHelp = new System.Windows.Forms.TabPage();
+            this.btmHelpBack = new System.Windows.Forms.Button();
             this.lblHelp = new System.Windows.Forms.Label();
             this.lblHelpTitle = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btmHelpBack = new System.Windows.Forms.Button();
+            this.pnlSPHangman = new System.Windows.Forms.Panel();
+            this.pbRightLeg = new System.Windows.Forms.PictureBox();
+            this.pbLeftLeg = new System.Windows.Forms.PictureBox();
+            this.pbRightArm = new System.Windows.Forms.PictureBox();
+            this.pbLeftArm = new System.Windows.Forms.PictureBox();
+            this.pbBody = new System.Windows.Forms.PictureBox();
+            this.pbHead = new System.Windows.Forms.PictureBox();
+            this.btnTPWSPlay = new System.Windows.Forms.Button();
+            this.tbTPCurrentWord = new System.Windows.Forms.TextBox();
+            this.lblCurrentPlayer = new System.Windows.Forms.Label();
+            this.btnTPWSBack = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tabPageTPGame = new System.Windows.Forms.TabPage();
+            this.pnlTPHangman = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pnlTPLetters = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
+            this.button32 = new System.Windows.Forms.Button();
+            this.button33 = new System.Windows.Forms.Button();
+            this.button34 = new System.Windows.Forms.Button();
+            this.button35 = new System.Windows.Forms.Button();
+            this.button36 = new System.Windows.Forms.Button();
+            this.button37 = new System.Windows.Forms.Button();
+            this.button38 = new System.Windows.Forms.Button();
+            this.button39 = new System.Windows.Forms.Button();
+            this.button40 = new System.Windows.Forms.Button();
+            this.button41 = new System.Windows.Forms.Button();
+            this.button42 = new System.Windows.Forms.Button();
+            this.button43 = new System.Windows.Forms.Button();
+            this.button44 = new System.Windows.Forms.Button();
+            this.button45 = new System.Windows.Forms.Button();
+            this.button46 = new System.Windows.Forms.Button();
+            this.button47 = new System.Windows.Forms.Button();
+            this.button48 = new System.Windows.Forms.Button();
+            this.button49 = new System.Windows.Forms.Button();
+            this.button50 = new System.Windows.Forms.Button();
+            this.button51 = new System.Windows.Forms.Button();
+            this.button52 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblTPGameWord = new System.Windows.Forms.Label();
+            this.button53 = new System.Windows.Forms.Button();
+            this.button54 = new System.Windows.Forms.Button();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tabPageTPResult = new System.Windows.Forms.TabPage();
+            this.lblTP = new System.Windows.Forms.Label();
+            this.lblTPWordlbl = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.button55 = new System.Windows.Forms.Button();
+            this.button56 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabControlMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenuHangman)).BeginInit();
@@ -122,19 +188,35 @@
             this.tabPageSinglePlayerMenu.SuspendLayout();
             this.tabPageSinglePlayerGame.SuspendLayout();
             this.pnlLetters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWood)).BeginInit();
+            this.tabPageSPResult.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSPHanged)).BeginInit();
+            this.tabTwoPlayers.SuspendLayout();
+            this.tabControlTwoPlayers.SuspendLayout();
+            this.tabPageTPNames.SuspendLayout();
+            this.tabPageTWWordSelect.SuspendLayout();
+            this.tabHighScores.SuspendLayout();
+            this.tabHelp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.pnlSPHangman.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRightLeg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLeftLeg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRightArm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLeftArm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBody)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHead)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWood)).BeginInit();
-            this.tabPageSPResult.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSPHanged)).BeginInit();
-            this.tabTwoPlayers.SuspendLayout();
-            this.tabHighScores.SuspendLayout();
-            this.tabHelp.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.tabPageTPGame.SuspendLayout();
+            this.pnlTPHangman.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.pnlTPLetters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.tabPageTPResult.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlMenu
@@ -417,18 +499,13 @@
             // 
             this.tabPageSinglePlayerGame.BackgroundImage = global::Hangman.Properties.Resources.board;
             this.tabPageSinglePlayerGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageSinglePlayerGame.Controls.Add(this.pnlSPHangman);
             this.tabPageSinglePlayerGame.Controls.Add(this.pnlLetters);
             this.tabPageSinglePlayerGame.Controls.Add(this.lblScore);
             this.tabPageSinglePlayerGame.Controls.Add(this.lblScore2);
             this.tabPageSinglePlayerGame.Controls.Add(this.lblSPGuessWord);
             this.tabPageSinglePlayerGame.Controls.Add(this.btnSPGameNew);
             this.tabPageSinglePlayerGame.Controls.Add(this.btnSPGameBack);
-            this.tabPageSinglePlayerGame.Controls.Add(this.pbRightLeg);
-            this.tabPageSinglePlayerGame.Controls.Add(this.pbLeftLeg);
-            this.tabPageSinglePlayerGame.Controls.Add(this.pbRightArm);
-            this.tabPageSinglePlayerGame.Controls.Add(this.pbLeftArm);
-            this.tabPageSinglePlayerGame.Controls.Add(this.pbBody);
-            this.tabPageSinglePlayerGame.Controls.Add(this.pbHead);
             this.tabPageSinglePlayerGame.Controls.Add(this.pbWood);
             this.tabPageSinglePlayerGame.Location = new System.Drawing.Point(4, 22);
             this.tabPageSinglePlayerGame.Name = "tabPageSinglePlayerGame";
@@ -868,60 +945,6 @@
             this.btnSPGameBack.UseVisualStyleBackColor = false;
             this.btnSPGameBack.Click += new System.EventHandler(this.btnSPGameBack_Click);
             // 
-            // pbRightLeg
-            // 
-            this.pbRightLeg.Image = ((System.Drawing.Image)(resources.GetObject("pbRightLeg.Image")));
-            this.pbRightLeg.Location = new System.Drawing.Point(247, 290);
-            this.pbRightLeg.Name = "pbRightLeg";
-            this.pbRightLeg.Size = new System.Drawing.Size(53, 50);
-            this.pbRightLeg.TabIndex = 6;
-            this.pbRightLeg.TabStop = false;
-            // 
-            // pbLeftLeg
-            // 
-            this.pbLeftLeg.Image = ((System.Drawing.Image)(resources.GetObject("pbLeftLeg.Image")));
-            this.pbLeftLeg.Location = new System.Drawing.Point(185, 291);
-            this.pbLeftLeg.Name = "pbLeftLeg";
-            this.pbLeftLeg.Size = new System.Drawing.Size(54, 50);
-            this.pbLeftLeg.TabIndex = 5;
-            this.pbLeftLeg.TabStop = false;
-            // 
-            // pbRightArm
-            // 
-            this.pbRightArm.Image = global::Hangman.Properties.Resources.rightArm;
-            this.pbRightArm.Location = new System.Drawing.Point(247, 198);
-            this.pbRightArm.Name = "pbRightArm";
-            this.pbRightArm.Size = new System.Drawing.Size(61, 50);
-            this.pbRightArm.TabIndex = 4;
-            this.pbRightArm.TabStop = false;
-            // 
-            // pbLeftArm
-            // 
-            this.pbLeftArm.Image = ((System.Drawing.Image)(resources.GetObject("pbLeftArm.Image")));
-            this.pbLeftArm.Location = new System.Drawing.Point(183, 199);
-            this.pbLeftArm.Name = "pbLeftArm";
-            this.pbLeftArm.Size = new System.Drawing.Size(54, 50);
-            this.pbLeftArm.TabIndex = 3;
-            this.pbLeftArm.TabStop = false;
-            // 
-            // pbBody
-            // 
-            this.pbBody.Image = ((System.Drawing.Image)(resources.GetObject("pbBody.Image")));
-            this.pbBody.Location = new System.Drawing.Point(234, 188);
-            this.pbBody.Name = "pbBody";
-            this.pbBody.Size = new System.Drawing.Size(19, 120);
-            this.pbBody.TabIndex = 2;
-            this.pbBody.TabStop = false;
-            // 
-            // pbHead
-            // 
-            this.pbHead.Image = ((System.Drawing.Image)(resources.GetObject("pbHead.Image")));
-            this.pbHead.Location = new System.Drawing.Point(208, 124);
-            this.pbHead.Name = "pbHead";
-            this.pbHead.Size = new System.Drawing.Size(69, 69);
-            this.pbHead.TabIndex = 1;
-            this.pbHead.TabStop = false;
-            // 
             // pbWood
             // 
             this.pbWood.Image = ((System.Drawing.Image)(resources.GetObject("pbWood.Image")));
@@ -1047,11 +1070,9 @@
             // tabTwoPlayers
             // 
             this.tabTwoPlayers.BackColor = System.Drawing.Color.Transparent;
-            this.tabTwoPlayers.BackgroundImage = global::Hangman.Properties.Resources.board;
             this.tabTwoPlayers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabTwoPlayers.Controls.Add(this.lblSoon);
+            this.tabTwoPlayers.Controls.Add(this.tabControlTwoPlayers);
             this.tabTwoPlayers.Controls.Add(this.label1);
-            this.tabTwoPlayers.Controls.Add(this.btnTwoBack);
             this.tabTwoPlayers.Location = new System.Drawing.Point(4, 22);
             this.tabTwoPlayers.Name = "tabTwoPlayers";
             this.tabTwoPlayers.Padding = new System.Windows.Forms.Padding(3);
@@ -1059,16 +1080,115 @@
             this.tabTwoPlayers.TabIndex = 2;
             this.tabTwoPlayers.Text = "Two Players";
             // 
-            // lblSoon
+            // tabControlTwoPlayers
             // 
-            this.lblSoon.AutoSize = true;
-            this.lblSoon.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoon.ForeColor = System.Drawing.Color.White;
-            this.lblSoon.Location = new System.Drawing.Point(164, 201);
-            this.lblSoon.Name = "lblSoon";
-            this.lblSoon.Size = new System.Drawing.Size(484, 79);
-            this.lblSoon.TabIndex = 41;
-            this.lblSoon.Text = "Coming Soon!";
+            this.tabControlTwoPlayers.Controls.Add(this.tabPageTPNames);
+            this.tabControlTwoPlayers.Controls.Add(this.tabPageTWWordSelect);
+            this.tabControlTwoPlayers.Controls.Add(this.tabPageTPGame);
+            this.tabControlTwoPlayers.Controls.Add(this.tabPageTPResult);
+            this.tabControlTwoPlayers.Location = new System.Drawing.Point(-5, -5);
+            this.tabControlTwoPlayers.Margin = new System.Windows.Forms.Padding(0);
+            this.tabControlTwoPlayers.Name = "tabControlTwoPlayers";
+            this.tabControlTwoPlayers.SelectedIndex = 0;
+            this.tabControlTwoPlayers.Size = new System.Drawing.Size(795, 570);
+            this.tabControlTwoPlayers.TabIndex = 4;
+            // 
+            // tabPageTPNames
+            // 
+            this.tabPageTPNames.BackgroundImage = global::Hangman.Properties.Resources.board;
+            this.tabPageTPNames.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageTPNames.Controls.Add(this.btnTPNamesNext);
+            this.tabPageTPNames.Controls.Add(this.tbTPPlayer2Name);
+            this.tabPageTPNames.Controls.Add(this.tbTPPlayer1Name);
+            this.tabPageTPNames.Controls.Add(this.lblPlayer2Name);
+            this.tabPageTPNames.Controls.Add(this.lblPlayer1Name);
+            this.tabPageTPNames.Controls.Add(this.btnTPBack);
+            this.tabPageTPNames.Location = new System.Drawing.Point(4, 22);
+            this.tabPageTPNames.Name = "tabPageTPNames";
+            this.tabPageTPNames.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageTPNames.Size = new System.Drawing.Size(787, 544);
+            this.tabPageTPNames.TabIndex = 0;
+            this.tabPageTPNames.Text = "Names";
+            this.tabPageTPNames.UseVisualStyleBackColor = true;
+            // 
+            // btnTPNamesNext
+            // 
+            this.btnTPNamesNext.BackColor = System.Drawing.Color.Ivory;
+            this.btnTPNamesNext.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTPNamesNext.Location = new System.Drawing.Point(334, 442);
+            this.btnTPNamesNext.Name = "btnTPNamesNext";
+            this.btnTPNamesNext.Size = new System.Drawing.Size(267, 50);
+            this.btnTPNamesNext.TabIndex = 52;
+            this.btnTPNamesNext.Text = "Next";
+            this.btnTPNamesNext.UseVisualStyleBackColor = false;
+            this.btnTPNamesNext.Click += new System.EventHandler(this.btnTPNamesNext_Click);
+            // 
+            // tbTPPlayer2Name
+            // 
+            this.tbTPPlayer2Name.Font = new System.Drawing.Font("Showcard Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTPPlayer2Name.Location = new System.Drawing.Point(61, 303);
+            this.tbTPPlayer2Name.Name = "tbTPPlayer2Name";
+            this.tbTPPlayer2Name.Size = new System.Drawing.Size(496, 51);
+            this.tbTPPlayer2Name.TabIndex = 51;
+            // 
+            // tbTPPlayer1Name
+            // 
+            this.tbTPPlayer1Name.Font = new System.Drawing.Font("Showcard Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTPPlayer1Name.Location = new System.Drawing.Point(61, 146);
+            this.tbTPPlayer1Name.Name = "tbTPPlayer1Name";
+            this.tbTPPlayer1Name.Size = new System.Drawing.Size(496, 51);
+            this.tbTPPlayer1Name.TabIndex = 50;
+            // 
+            // lblPlayer2Name
+            // 
+            this.lblPlayer2Name.AutoSize = true;
+            this.lblPlayer2Name.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer2Name.ForeColor = System.Drawing.Color.White;
+            this.lblPlayer2Name.Location = new System.Drawing.Point(47, 221);
+            this.lblPlayer2Name.Name = "lblPlayer2Name";
+            this.lblPlayer2Name.Size = new System.Drawing.Size(512, 79);
+            this.lblPlayer2Name.TabIndex = 49;
+            this.lblPlayer2Name.Text = "Player2 Name:";
+            // 
+            // lblPlayer1Name
+            // 
+            this.lblPlayer1Name.AutoSize = true;
+            this.lblPlayer1Name.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer1Name.ForeColor = System.Drawing.Color.White;
+            this.lblPlayer1Name.Location = new System.Drawing.Point(47, 64);
+            this.lblPlayer1Name.Name = "lblPlayer1Name";
+            this.lblPlayer1Name.Size = new System.Drawing.Size(510, 79);
+            this.lblPlayer1Name.TabIndex = 48;
+            this.lblPlayer1Name.Text = "Player1 Name:";
+            // 
+            // btnTPBack
+            // 
+            this.btnTPBack.BackColor = System.Drawing.Color.Ivory;
+            this.btnTPBack.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTPBack.Location = new System.Drawing.Point(61, 442);
+            this.btnTPBack.Name = "btnTPBack";
+            this.btnTPBack.Size = new System.Drawing.Size(267, 50);
+            this.btnTPBack.TabIndex = 47;
+            this.btnTPBack.Text = "Back";
+            this.btnTPBack.UseVisualStyleBackColor = false;
+            this.btnTPBack.Click += new System.EventHandler(this.btnTPBack_Click);
+            // 
+            // tabPageTWWordSelect
+            // 
+            this.tabPageTWWordSelect.BackgroundImage = global::Hangman.Properties.Resources.board;
+            this.tabPageTWWordSelect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageTWWordSelect.Controls.Add(this.label3);
+            this.tabPageTWWordSelect.Controls.Add(this.btnTPWSPlay);
+            this.tabPageTWWordSelect.Controls.Add(this.tbTPCurrentWord);
+            this.tabPageTWWordSelect.Controls.Add(this.lblCurrentPlayer);
+            this.tabPageTWWordSelect.Controls.Add(this.btnTPWSBack);
+            this.tabPageTWWordSelect.Location = new System.Drawing.Point(4, 22);
+            this.tabPageTWWordSelect.Name = "tabPageTWWordSelect";
+            this.tabPageTWWordSelect.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageTWWordSelect.Size = new System.Drawing.Size(787, 544);
+            this.tabPageTWWordSelect.TabIndex = 1;
+            this.tabPageTWWordSelect.Text = "Word Select";
+            this.tabPageTWWordSelect.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -1078,18 +1198,6 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "label1";
-            // 
-            // btnTwoBack
-            // 
-            this.btnTwoBack.BackColor = System.Drawing.Color.Ivory;
-            this.btnTwoBack.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTwoBack.Location = new System.Drawing.Point(98, 427);
-            this.btnTwoBack.Name = "btnTwoBack";
-            this.btnTwoBack.Size = new System.Drawing.Size(300, 50);
-            this.btnTwoBack.TabIndex = 2;
-            this.btnTwoBack.Text = "Back";
-            this.btnTwoBack.UseVisualStyleBackColor = false;
-            this.btnTwoBack.Click += new System.EventHandler(this.btnTwoBack_Click);
             // 
             // tabHighScores
             // 
@@ -1171,6 +1279,18 @@
             this.tabHelp.Text = "Help";
             this.tabHelp.UseVisualStyleBackColor = true;
             // 
+            // btmHelpBack
+            // 
+            this.btmHelpBack.BackColor = System.Drawing.Color.Ivory;
+            this.btmHelpBack.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmHelpBack.Location = new System.Drawing.Point(68, 451);
+            this.btmHelpBack.Name = "btmHelpBack";
+            this.btmHelpBack.Size = new System.Drawing.Size(300, 50);
+            this.btmHelpBack.TabIndex = 44;
+            this.btmHelpBack.Text = "Back";
+            this.btmHelpBack.UseVisualStyleBackColor = false;
+            this.btmHelpBack.Click += new System.EventHandler(this.btmHelpBack_Click);
+            // 
             // lblHelp
             // 
             this.lblHelp.AutoSize = true;
@@ -1197,17 +1317,771 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // btmHelpBack
+            // pnlSPHangman
             // 
-            this.btmHelpBack.BackColor = System.Drawing.Color.Ivory;
-            this.btmHelpBack.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btmHelpBack.Location = new System.Drawing.Point(68, 451);
-            this.btmHelpBack.Name = "btmHelpBack";
-            this.btmHelpBack.Size = new System.Drawing.Size(300, 50);
-            this.btmHelpBack.TabIndex = 44;
-            this.btmHelpBack.Text = "Back";
-            this.btmHelpBack.UseVisualStyleBackColor = false;
-            this.btmHelpBack.Click += new System.EventHandler(this.btmHelpBack_Click);
+            this.pnlSPHangman.Controls.Add(this.pbRightLeg);
+            this.pnlSPHangman.Controls.Add(this.pbLeftLeg);
+            this.pnlSPHangman.Controls.Add(this.pbRightArm);
+            this.pnlSPHangman.Controls.Add(this.pbLeftArm);
+            this.pnlSPHangman.Controls.Add(this.pbBody);
+            this.pnlSPHangman.Controls.Add(this.pbHead);
+            this.pnlSPHangman.Location = new System.Drawing.Point(166, 118);
+            this.pnlSPHangman.Name = "pnlSPHangman";
+            this.pnlSPHangman.Size = new System.Drawing.Size(156, 223);
+            this.pnlSPHangman.TabIndex = 43;
+            // 
+            // pbRightLeg
+            // 
+            this.pbRightLeg.Image = ((System.Drawing.Image)(resources.GetObject("pbRightLeg.Image")));
+            this.pbRightLeg.Location = new System.Drawing.Point(81, 166);
+            this.pbRightLeg.Name = "pbRightLeg";
+            this.pbRightLeg.Size = new System.Drawing.Size(53, 50);
+            this.pbRightLeg.TabIndex = 12;
+            this.pbRightLeg.TabStop = false;
+            // 
+            // pbLeftLeg
+            // 
+            this.pbLeftLeg.Image = ((System.Drawing.Image)(resources.GetObject("pbLeftLeg.Image")));
+            this.pbLeftLeg.Location = new System.Drawing.Point(19, 167);
+            this.pbLeftLeg.Name = "pbLeftLeg";
+            this.pbLeftLeg.Size = new System.Drawing.Size(54, 50);
+            this.pbLeftLeg.TabIndex = 11;
+            this.pbLeftLeg.TabStop = false;
+            // 
+            // pbRightArm
+            // 
+            this.pbRightArm.Image = global::Hangman.Properties.Resources.rightArm;
+            this.pbRightArm.Location = new System.Drawing.Point(81, 74);
+            this.pbRightArm.Name = "pbRightArm";
+            this.pbRightArm.Size = new System.Drawing.Size(61, 50);
+            this.pbRightArm.TabIndex = 10;
+            this.pbRightArm.TabStop = false;
+            // 
+            // pbLeftArm
+            // 
+            this.pbLeftArm.Image = ((System.Drawing.Image)(resources.GetObject("pbLeftArm.Image")));
+            this.pbLeftArm.Location = new System.Drawing.Point(17, 75);
+            this.pbLeftArm.Name = "pbLeftArm";
+            this.pbLeftArm.Size = new System.Drawing.Size(54, 50);
+            this.pbLeftArm.TabIndex = 9;
+            this.pbLeftArm.TabStop = false;
+            // 
+            // pbBody
+            // 
+            this.pbBody.Image = ((System.Drawing.Image)(resources.GetObject("pbBody.Image")));
+            this.pbBody.Location = new System.Drawing.Point(68, 64);
+            this.pbBody.Name = "pbBody";
+            this.pbBody.Size = new System.Drawing.Size(19, 120);
+            this.pbBody.TabIndex = 8;
+            this.pbBody.TabStop = false;
+            // 
+            // pbHead
+            // 
+            this.pbHead.Image = ((System.Drawing.Image)(resources.GetObject("pbHead.Image")));
+            this.pbHead.Location = new System.Drawing.Point(42, 0);
+            this.pbHead.Name = "pbHead";
+            this.pbHead.Size = new System.Drawing.Size(69, 69);
+            this.pbHead.TabIndex = 7;
+            this.pbHead.TabStop = false;
+            // 
+            // btnTPWSPlay
+            // 
+            this.btnTPWSPlay.BackColor = System.Drawing.Color.Ivory;
+            this.btnTPWSPlay.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTPWSPlay.Location = new System.Drawing.Point(316, 406);
+            this.btnTPWSPlay.Name = "btnTPWSPlay";
+            this.btnTPWSPlay.Size = new System.Drawing.Size(267, 50);
+            this.btnTPWSPlay.TabIndex = 56;
+            this.btnTPWSPlay.Text = "Play";
+            this.btnTPWSPlay.UseVisualStyleBackColor = false;
+            // 
+            // tbTPCurrentWord
+            // 
+            this.tbTPCurrentWord.Font = new System.Drawing.Font("Showcard Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTPCurrentWord.Location = new System.Drawing.Point(130, 283);
+            this.tbTPCurrentWord.Name = "tbTPCurrentWord";
+            this.tbTPCurrentWord.Size = new System.Drawing.Size(496, 51);
+            this.tbTPCurrentWord.TabIndex = 55;
+            this.tbTPCurrentWord.UseSystemPasswordChar = true;
+            // 
+            // lblCurrentPlayer
+            // 
+            this.lblCurrentPlayer.AutoSize = true;
+            this.lblCurrentPlayer.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentPlayer.ForeColor = System.Drawing.Color.White;
+            this.lblCurrentPlayer.Location = new System.Drawing.Point(227, 74);
+            this.lblCurrentPlayer.Name = "lblCurrentPlayer";
+            this.lblCurrentPlayer.Size = new System.Drawing.Size(276, 79);
+            this.lblCurrentPlayer.TabIndex = 54;
+            this.lblCurrentPlayer.Text = "Player";
+            this.lblCurrentPlayer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnTPWSBack
+            // 
+            this.btnTPWSBack.BackColor = System.Drawing.Color.Ivory;
+            this.btnTPWSBack.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTPWSBack.Location = new System.Drawing.Point(43, 406);
+            this.btnTPWSBack.Name = "btnTPWSBack";
+            this.btnTPWSBack.Size = new System.Drawing.Size(267, 50);
+            this.btnTPWSBack.TabIndex = 53;
+            this.btnTPWSBack.Text = "Back";
+            this.btnTPWSBack.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(116, 153);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(518, 79);
+            this.label3.TabIndex = 57;
+            this.label3.Text = "enter a word:";
+            // 
+            // tabPageTPGame
+            // 
+            this.tabPageTPGame.BackgroundImage = global::Hangman.Properties.Resources.board;
+            this.tabPageTPGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageTPGame.Controls.Add(this.label7);
+            this.tabPageTPGame.Controls.Add(this.label6);
+            this.tabPageTPGame.Controls.Add(this.pnlTPHangman);
+            this.tabPageTPGame.Controls.Add(this.pnlTPLetters);
+            this.tabPageTPGame.Controls.Add(this.label2);
+            this.tabPageTPGame.Controls.Add(this.label4);
+            this.tabPageTPGame.Controls.Add(this.lblTPGameWord);
+            this.tabPageTPGame.Controls.Add(this.button53);
+            this.tabPageTPGame.Controls.Add(this.button54);
+            this.tabPageTPGame.Controls.Add(this.pictureBox7);
+            this.tabPageTPGame.Location = new System.Drawing.Point(4, 22);
+            this.tabPageTPGame.Name = "tabPageTPGame";
+            this.tabPageTPGame.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageTPGame.Size = new System.Drawing.Size(787, 544);
+            this.tabPageTPGame.TabIndex = 2;
+            this.tabPageTPGame.Text = "Game";
+            this.tabPageTPGame.UseVisualStyleBackColor = true;
+            // 
+            // pnlTPHangman
+            // 
+            this.pnlTPHangman.Controls.Add(this.pictureBox1);
+            this.pnlTPHangman.Controls.Add(this.pictureBox2);
+            this.pnlTPHangman.Controls.Add(this.pictureBox3);
+            this.pnlTPHangman.Controls.Add(this.pictureBox4);
+            this.pnlTPHangman.Controls.Add(this.pictureBox5);
+            this.pnlTPHangman.Controls.Add(this.pictureBox6);
+            this.pnlTPHangman.Location = new System.Drawing.Point(168, 117);
+            this.pnlTPHangman.Name = "pnlTPHangman";
+            this.pnlTPHangman.Size = new System.Drawing.Size(156, 223);
+            this.pnlTPHangman.TabIndex = 51;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(81, 166);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 50);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(19, 167);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(54, 50);
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Hangman.Properties.Resources.rightArm;
+            this.pictureBox3.Location = new System.Drawing.Point(81, 74);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(61, 50);
+            this.pictureBox3.TabIndex = 10;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(17, 75);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(54, 50);
+            this.pictureBox4.TabIndex = 9;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(68, 64);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(19, 120);
+            this.pictureBox5.TabIndex = 8;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(42, 0);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(69, 69);
+            this.pictureBox6.TabIndex = 7;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pnlTPLetters
+            // 
+            this.pnlTPLetters.Controls.Add(this.button1);
+            this.pnlTPLetters.Controls.Add(this.button2);
+            this.pnlTPLetters.Controls.Add(this.button3);
+            this.pnlTPLetters.Controls.Add(this.button14);
+            this.pnlTPLetters.Controls.Add(this.button24);
+            this.pnlTPLetters.Controls.Add(this.button32);
+            this.pnlTPLetters.Controls.Add(this.button33);
+            this.pnlTPLetters.Controls.Add(this.button34);
+            this.pnlTPLetters.Controls.Add(this.button35);
+            this.pnlTPLetters.Controls.Add(this.button36);
+            this.pnlTPLetters.Controls.Add(this.button37);
+            this.pnlTPLetters.Controls.Add(this.button38);
+            this.pnlTPLetters.Controls.Add(this.button39);
+            this.pnlTPLetters.Controls.Add(this.button40);
+            this.pnlTPLetters.Controls.Add(this.button41);
+            this.pnlTPLetters.Controls.Add(this.button42);
+            this.pnlTPLetters.Controls.Add(this.button43);
+            this.pnlTPLetters.Controls.Add(this.button44);
+            this.pnlTPLetters.Controls.Add(this.button45);
+            this.pnlTPLetters.Controls.Add(this.button46);
+            this.pnlTPLetters.Controls.Add(this.button47);
+            this.pnlTPLetters.Controls.Add(this.button48);
+            this.pnlTPLetters.Controls.Add(this.button49);
+            this.pnlTPLetters.Controls.Add(this.button50);
+            this.pnlTPLetters.Controls.Add(this.button51);
+            this.pnlTPLetters.Controls.Add(this.button52);
+            this.pnlTPLetters.Location = new System.Drawing.Point(330, 275);
+            this.pnlTPLetters.Name = "pnlTPLetters";
+            this.pnlTPLetters.Size = new System.Drawing.Size(403, 136);
+            this.pnlTPLetters.TabIndex = 50;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Ivory;
+            this.button1.CausesValidation = false;
+            this.button1.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(275, 95);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(35, 40);
+            this.button1.TabIndex = 68;
+            this.button1.Text = "M";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Ivory;
+            this.button2.CausesValidation = false;
+            this.button2.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(120, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(35, 40);
+            this.button2.TabIndex = 46;
+            this.button2.Text = "R";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Ivory;
+            this.button3.CausesValidation = false;
+            this.button3.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(234, 95);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(35, 40);
+            this.button3.TabIndex = 67;
+            this.button3.Text = "N";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.Ivory;
+            this.button14.CausesValidation = false;
+            this.button14.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.Location = new System.Drawing.Point(-1, 3);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(35, 40);
+            this.button14.TabIndex = 43;
+            this.button14.Text = "Q";
+            this.button14.UseVisualStyleBackColor = false;
+            // 
+            // button24
+            // 
+            this.button24.BackColor = System.Drawing.Color.Ivory;
+            this.button24.CausesValidation = false;
+            this.button24.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button24.Location = new System.Drawing.Point(193, 95);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(35, 40);
+            this.button24.TabIndex = 66;
+            this.button24.Text = "B";
+            this.button24.UseVisualStyleBackColor = false;
+            // 
+            // button32
+            // 
+            this.button32.BackColor = System.Drawing.Color.Ivory;
+            this.button32.CausesValidation = false;
+            this.button32.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button32.Location = new System.Drawing.Point(40, 3);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(35, 40);
+            this.button32.TabIndex = 44;
+            this.button32.Text = "W";
+            this.button32.UseVisualStyleBackColor = false;
+            // 
+            // button33
+            // 
+            this.button33.BackColor = System.Drawing.Color.Ivory;
+            this.button33.CausesValidation = false;
+            this.button33.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button33.Location = new System.Drawing.Point(152, 95);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(35, 40);
+            this.button33.TabIndex = 65;
+            this.button33.Text = "V";
+            this.button33.UseVisualStyleBackColor = false;
+            // 
+            // button34
+            // 
+            this.button34.BackColor = System.Drawing.Color.Ivory;
+            this.button34.CausesValidation = false;
+            this.button34.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button34.Location = new System.Drawing.Point(81, 3);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(35, 40);
+            this.button34.TabIndex = 45;
+            this.button34.Text = "E";
+            this.button34.UseVisualStyleBackColor = false;
+            // 
+            // button35
+            // 
+            this.button35.BackColor = System.Drawing.Color.Ivory;
+            this.button35.CausesValidation = false;
+            this.button35.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button35.Location = new System.Drawing.Point(113, 95);
+            this.button35.Name = "button35";
+            this.button35.Size = new System.Drawing.Size(35, 40);
+            this.button35.TabIndex = 64;
+            this.button35.Text = "C";
+            this.button35.UseVisualStyleBackColor = false;
+            // 
+            // button36
+            // 
+            this.button36.BackColor = System.Drawing.Color.Ivory;
+            this.button36.CausesValidation = false;
+            this.button36.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button36.Location = new System.Drawing.Point(161, 3);
+            this.button36.Name = "button36";
+            this.button36.Size = new System.Drawing.Size(35, 40);
+            this.button36.TabIndex = 47;
+            this.button36.Text = "T";
+            this.button36.UseVisualStyleBackColor = false;
+            // 
+            // button37
+            // 
+            this.button37.BackColor = System.Drawing.Color.Ivory;
+            this.button37.CausesValidation = false;
+            this.button37.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button37.Location = new System.Drawing.Point(72, 95);
+            this.button37.Name = "button37";
+            this.button37.Size = new System.Drawing.Size(35, 40);
+            this.button37.TabIndex = 63;
+            this.button37.Text = "X";
+            this.button37.UseVisualStyleBackColor = false;
+            // 
+            // button38
+            // 
+            this.button38.BackColor = System.Drawing.Color.Ivory;
+            this.button38.CausesValidation = false;
+            this.button38.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button38.Location = new System.Drawing.Point(202, 3);
+            this.button38.Name = "button38";
+            this.button38.Size = new System.Drawing.Size(35, 40);
+            this.button38.TabIndex = 48;
+            this.button38.Text = "Y";
+            this.button38.UseVisualStyleBackColor = false;
+            // 
+            // button39
+            // 
+            this.button39.BackColor = System.Drawing.Color.Ivory;
+            this.button39.CausesValidation = false;
+            this.button39.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button39.Location = new System.Drawing.Point(31, 95);
+            this.button39.Name = "button39";
+            this.button39.Size = new System.Drawing.Size(35, 40);
+            this.button39.TabIndex = 62;
+            this.button39.Text = "Z";
+            this.button39.UseVisualStyleBackColor = false;
+            // 
+            // button40
+            // 
+            this.button40.BackColor = System.Drawing.Color.Ivory;
+            this.button40.CausesValidation = false;
+            this.button40.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button40.Location = new System.Drawing.Point(243, 3);
+            this.button40.Name = "button40";
+            this.button40.Size = new System.Drawing.Size(35, 40);
+            this.button40.TabIndex = 49;
+            this.button40.Text = "U";
+            this.button40.UseVisualStyleBackColor = false;
+            // 
+            // button41
+            // 
+            this.button41.BackColor = System.Drawing.Color.Ivory;
+            this.button41.CausesValidation = false;
+            this.button41.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button41.Location = new System.Drawing.Point(337, 49);
+            this.button41.Name = "button41";
+            this.button41.Size = new System.Drawing.Size(35, 40);
+            this.button41.TabIndex = 61;
+            this.button41.Text = "L";
+            this.button41.UseVisualStyleBackColor = false;
+            // 
+            // button42
+            // 
+            this.button42.BackColor = System.Drawing.Color.Ivory;
+            this.button42.CausesValidation = false;
+            this.button42.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button42.Location = new System.Drawing.Point(284, 3);
+            this.button42.Name = "button42";
+            this.button42.Size = new System.Drawing.Size(35, 40);
+            this.button42.TabIndex = 50;
+            this.button42.Text = "I";
+            this.button42.UseVisualStyleBackColor = false;
+            // 
+            // button43
+            // 
+            this.button43.BackColor = System.Drawing.Color.Ivory;
+            this.button43.CausesValidation = false;
+            this.button43.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button43.Location = new System.Drawing.Point(296, 49);
+            this.button43.Name = "button43";
+            this.button43.Size = new System.Drawing.Size(35, 40);
+            this.button43.TabIndex = 60;
+            this.button43.Text = "K";
+            this.button43.UseVisualStyleBackColor = false;
+            // 
+            // button44
+            // 
+            this.button44.BackColor = System.Drawing.Color.Ivory;
+            this.button44.CausesValidation = false;
+            this.button44.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button44.Location = new System.Drawing.Point(325, 3);
+            this.button44.Name = "button44";
+            this.button44.Size = new System.Drawing.Size(35, 40);
+            this.button44.TabIndex = 51;
+            this.button44.Text = "O";
+            this.button44.UseVisualStyleBackColor = false;
+            // 
+            // button45
+            // 
+            this.button45.BackColor = System.Drawing.Color.Ivory;
+            this.button45.CausesValidation = false;
+            this.button45.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button45.Location = new System.Drawing.Point(255, 49);
+            this.button45.Name = "button45";
+            this.button45.Size = new System.Drawing.Size(35, 40);
+            this.button45.TabIndex = 59;
+            this.button45.Text = "J";
+            this.button45.UseVisualStyleBackColor = false;
+            // 
+            // button46
+            // 
+            this.button46.BackColor = System.Drawing.Color.Ivory;
+            this.button46.CausesValidation = false;
+            this.button46.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button46.Location = new System.Drawing.Point(366, 3);
+            this.button46.Name = "button46";
+            this.button46.Size = new System.Drawing.Size(35, 40);
+            this.button46.TabIndex = 52;
+            this.button46.Text = "P";
+            this.button46.UseVisualStyleBackColor = false;
+            // 
+            // button47
+            // 
+            this.button47.BackColor = System.Drawing.Color.Ivory;
+            this.button47.CausesValidation = false;
+            this.button47.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button47.Location = new System.Drawing.Point(214, 49);
+            this.button47.Name = "button47";
+            this.button47.Size = new System.Drawing.Size(35, 40);
+            this.button47.TabIndex = 58;
+            this.button47.Text = "H";
+            this.button47.UseVisualStyleBackColor = false;
+            // 
+            // button48
+            // 
+            this.button48.BackColor = System.Drawing.Color.Ivory;
+            this.button48.CausesValidation = false;
+            this.button48.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button48.Location = new System.Drawing.Point(11, 49);
+            this.button48.Name = "button48";
+            this.button48.Size = new System.Drawing.Size(35, 40);
+            this.button48.TabIndex = 53;
+            this.button48.Text = "A";
+            this.button48.UseVisualStyleBackColor = false;
+            // 
+            // button49
+            // 
+            this.button49.BackColor = System.Drawing.Color.Ivory;
+            this.button49.CausesValidation = false;
+            this.button49.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button49.Location = new System.Drawing.Point(173, 49);
+            this.button49.Name = "button49";
+            this.button49.Size = new System.Drawing.Size(35, 40);
+            this.button49.TabIndex = 57;
+            this.button49.Text = "G";
+            this.button49.UseVisualStyleBackColor = false;
+            // 
+            // button50
+            // 
+            this.button50.BackColor = System.Drawing.Color.Ivory;
+            this.button50.CausesValidation = false;
+            this.button50.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button50.Location = new System.Drawing.Point(52, 49);
+            this.button50.Name = "button50";
+            this.button50.Size = new System.Drawing.Size(35, 40);
+            this.button50.TabIndex = 54;
+            this.button50.Text = "S";
+            this.button50.UseVisualStyleBackColor = false;
+            // 
+            // button51
+            // 
+            this.button51.BackColor = System.Drawing.Color.Ivory;
+            this.button51.CausesValidation = false;
+            this.button51.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button51.Location = new System.Drawing.Point(132, 49);
+            this.button51.Name = "button51";
+            this.button51.Size = new System.Drawing.Size(35, 40);
+            this.button51.TabIndex = 56;
+            this.button51.Text = "F";
+            this.button51.UseVisualStyleBackColor = false;
+            // 
+            // button52
+            // 
+            this.button52.BackColor = System.Drawing.Color.Ivory;
+            this.button52.CausesValidation = false;
+            this.button52.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button52.Location = new System.Drawing.Point(93, 49);
+            this.button52.Name = "button52";
+            this.button52.Size = new System.Drawing.Size(35, 40);
+            this.button52.TabIndex = 55;
+            this.button52.Text = "D";
+            this.button52.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(661, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 79);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(330, 38);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(325, 79);
+            this.label4.TabIndex = 48;
+            this.label4.Text = "Player1:";
+            // 
+            // lblTPGameWord
+            // 
+            this.lblTPGameWord.AutoSize = true;
+            this.lblTPGameWord.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTPGameWord.ForeColor = System.Drawing.Color.White;
+            this.lblTPGameWord.Location = new System.Drawing.Point(316, 183);
+            this.lblTPGameWord.Name = "lblTPGameWord";
+            this.lblTPGameWord.Size = new System.Drawing.Size(426, 79);
+            this.lblTPGameWord.TabIndex = 47;
+            this.lblTPGameWord.Text = "_ _ _ _ _ _ _ _ _";
+            // 
+            // button53
+            // 
+            this.button53.BackColor = System.Drawing.Color.Ivory;
+            this.button53.CausesValidation = false;
+            this.button53.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button53.Location = new System.Drawing.Point(236, 450);
+            this.button53.Name = "button53";
+            this.button53.Size = new System.Drawing.Size(171, 50);
+            this.button53.TabIndex = 46;
+            this.button53.Text = "New Game";
+            this.button53.UseVisualStyleBackColor = false;
+            // 
+            // button54
+            // 
+            this.button54.BackColor = System.Drawing.Color.Ivory;
+            this.button54.CausesValidation = false;
+            this.button54.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button54.Location = new System.Drawing.Point(58, 450);
+            this.button54.Name = "button54";
+            this.button54.Size = new System.Drawing.Size(150, 50);
+            this.button54.TabIndex = 45;
+            this.button54.Text = "Back";
+            this.button54.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(32, 55);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(257, 329);
+            this.pictureBox7.TabIndex = 44;
+            this.pictureBox7.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(334, 117);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(327, 79);
+            this.label6.TabIndex = 52;
+            this.label6.Text = "Player2:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(653, 117);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 79);
+            this.label7.TabIndex = 53;
+            this.label7.Text = "0";
+            // 
+            // tabPageTPResult
+            // 
+            this.tabPageTPResult.BackgroundImage = global::Hangman.Properties.Resources.board;
+            this.tabPageTPResult.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageTPResult.Controls.Add(this.label9);
+            this.tabPageTPResult.Controls.Add(this.label10);
+            this.tabPageTPResult.Controls.Add(this.label12);
+            this.tabPageTPResult.Controls.Add(this.label13);
+            this.tabPageTPResult.Controls.Add(this.lblTP);
+            this.tabPageTPResult.Controls.Add(this.lblTPWordlbl);
+            this.tabPageTPResult.Controls.Add(this.pictureBox8);
+            this.tabPageTPResult.Controls.Add(this.button55);
+            this.tabPageTPResult.Controls.Add(this.button56);
+            this.tabPageTPResult.Location = new System.Drawing.Point(4, 22);
+            this.tabPageTPResult.Name = "tabPageTPResult";
+            this.tabPageTPResult.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageTPResult.Size = new System.Drawing.Size(787, 544);
+            this.tabPageTPResult.TabIndex = 3;
+            this.tabPageTPResult.Text = "Result";
+            this.tabPageTPResult.UseVisualStyleBackColor = true;
+            // 
+            // lblTP
+            // 
+            this.lblTP.AutoSize = true;
+            this.lblTP.Font = new System.Drawing.Font("Showcard Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTP.ForeColor = System.Drawing.Color.White;
+            this.lblTP.Location = new System.Drawing.Point(489, 151);
+            this.lblTP.Name = "lblTP";
+            this.lblTP.Size = new System.Drawing.Size(135, 46);
+            this.lblTP.TabIndex = 58;
+            this.lblTP.Text = "word";
+            // 
+            // lblTPWordlbl
+            // 
+            this.lblTPWordlbl.AutoSize = true;
+            this.lblTPWordlbl.Font = new System.Drawing.Font("Showcard Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTPWordlbl.ForeColor = System.Drawing.Color.White;
+            this.lblTPWordlbl.Location = new System.Drawing.Point(346, 105);
+            this.lblTPWordlbl.Name = "lblTPWordlbl";
+            this.lblTPWordlbl.Size = new System.Drawing.Size(406, 46);
+            this.lblTPWordlbl.TabIndex = 57;
+            this.lblTPWordlbl.Text = "Correct word was:";
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackgroundImage = global::Hangman.Properties.Resources.Hangman;
+            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox8.ErrorImage = null;
+            this.pictureBox8.InitialImage = null;
+            this.pictureBox8.Location = new System.Drawing.Point(22, 62);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(380, 334);
+            this.pictureBox8.TabIndex = 56;
+            this.pictureBox8.TabStop = false;
+            // 
+            // button55
+            // 
+            this.button55.BackColor = System.Drawing.Color.Ivory;
+            this.button55.CausesValidation = false;
+            this.button55.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button55.Location = new System.Drawing.Point(386, 432);
+            this.button55.Name = "button55";
+            this.button55.Size = new System.Drawing.Size(208, 50);
+            this.button55.TabIndex = 53;
+            this.button55.Text = "Continue";
+            this.button55.UseVisualStyleBackColor = false;
+            // 
+            // button56
+            // 
+            this.button56.BackColor = System.Drawing.Color.Ivory;
+            this.button56.CausesValidation = false;
+            this.button56.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button56.Location = new System.Drawing.Point(215, 432);
+            this.button56.Name = "button56";
+            this.button56.Size = new System.Drawing.Size(150, 50);
+            this.button56.TabIndex = 52;
+            this.button56.Text = "Exit";
+            this.button56.UseVisualStyleBackColor = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(672, 304);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 79);
+            this.label9.TabIndex = 62;
+            this.label9.Text = "0";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(353, 304);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(327, 79);
+            this.label10.TabIndex = 61;
+            this.label10.Text = "Player2:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(672, 225);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(72, 79);
+            this.label12.TabIndex = 60;
+            this.label12.Text = "0";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(349, 225);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(325, 79);
+            this.label13.TabIndex = 59;
+            this.label13.Text = "Player1:";
             // 
             // Hangman
             // 
@@ -1235,23 +2109,43 @@
             this.tabPageSinglePlayerGame.ResumeLayout(false);
             this.tabPageSinglePlayerGame.PerformLayout();
             this.pnlLetters.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbRightLeg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLeftLeg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRightArm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLeftArm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBody)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHead)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWood)).EndInit();
             this.tabPageSPResult.ResumeLayout(false);
             this.tabPageSPResult.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSPHanged)).EndInit();
             this.tabTwoPlayers.ResumeLayout(false);
             this.tabTwoPlayers.PerformLayout();
+            this.tabControlTwoPlayers.ResumeLayout(false);
+            this.tabPageTPNames.ResumeLayout(false);
+            this.tabPageTPNames.PerformLayout();
+            this.tabPageTWWordSelect.ResumeLayout(false);
+            this.tabPageTWWordSelect.PerformLayout();
             this.tabHighScores.ResumeLayout(false);
             this.tabHighScores.PerformLayout();
             this.tabHelp.ResumeLayout(false);
             this.tabHelp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.pnlSPHangman.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbRightLeg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLeftLeg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRightArm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLeftArm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBody)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHead)).EndInit();
+            this.tabPageTPGame.ResumeLayout(false);
+            this.tabPageTPGame.PerformLayout();
+            this.pnlTPHangman.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.pnlTPLetters.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.tabPageTPResult.ResumeLayout(false);
+            this.tabPageTPResult.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1270,7 +2164,6 @@
         private System.Windows.Forms.TabPage tabTwoPlayers;
         private System.Windows.Forms.TabPage tabHighScores;
         private System.Windows.Forms.TabPage tabHelp;
-        private System.Windows.Forms.Button btnTwoBack;
         private System.Windows.Forms.Button btnHighScoreBack;
         private System.Windows.Forms.PictureBox pbMenuHangman;
         private System.Windows.Forms.TabControl tabControlSinglePlayer;
@@ -1289,12 +2182,6 @@
         private System.Windows.Forms.TabPage tabPageSinglePlayerGame;
         private System.Windows.Forms.Button btnSPGameNew;
         private System.Windows.Forms.Button btnSPGameBack;
-        private System.Windows.Forms.PictureBox pbRightLeg;
-        private System.Windows.Forms.PictureBox pbLeftLeg;
-        private System.Windows.Forms.PictureBox pbRightArm;
-        private System.Windows.Forms.PictureBox pbLeftArm;
-        private System.Windows.Forms.PictureBox pbBody;
-        private System.Windows.Forms.PictureBox pbHead;
         private System.Windows.Forms.PictureBox pbWood;
         private System.Windows.Forms.TabPage tabPageSPResult;
         private System.Windows.Forms.Label lblScore;
@@ -1305,7 +2192,6 @@
         private System.Windows.Forms.Button btnSPResNew;
         private System.Windows.Forms.Button btnSPResBack;
         private System.Windows.Forms.Label lblSPRes1;
-        private System.Windows.Forms.Label lblSoon;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblHelp;
         private System.Windows.Forms.Label lblHelpTitle;
@@ -1343,6 +2229,80 @@
         private System.Windows.Forms.Label lblSPResCorrect;
         private System.Windows.Forms.ComboBox cbScoresDificulty;
         private System.Windows.Forms.Button btmHelpBack;
+        private System.Windows.Forms.TabControl tabControlTwoPlayers;
+        private System.Windows.Forms.TabPage tabPageTPNames;
+        private System.Windows.Forms.Button btnTPNamesNext;
+        private System.Windows.Forms.TextBox tbTPPlayer2Name;
+        private System.Windows.Forms.TextBox tbTPPlayer1Name;
+        private System.Windows.Forms.Label lblPlayer2Name;
+        private System.Windows.Forms.Label lblPlayer1Name;
+        private System.Windows.Forms.Button btnTPBack;
+        private System.Windows.Forms.TabPage tabPageTWWordSelect;
+        private System.Windows.Forms.Panel pnlSPHangman;
+        private System.Windows.Forms.PictureBox pbRightLeg;
+        private System.Windows.Forms.PictureBox pbLeftLeg;
+        private System.Windows.Forms.PictureBox pbRightArm;
+        private System.Windows.Forms.PictureBox pbLeftArm;
+        private System.Windows.Forms.PictureBox pbBody;
+        private System.Windows.Forms.PictureBox pbHead;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnTPWSPlay;
+        private System.Windows.Forms.TextBox tbTPCurrentWord;
+        private System.Windows.Forms.Label lblCurrentPlayer;
+        private System.Windows.Forms.Button btnTPWSBack;
+        private System.Windows.Forms.TabPage tabPageTPGame;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel pnlTPHangman;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Panel pnlTPLetters;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button button32;
+        private System.Windows.Forms.Button button33;
+        private System.Windows.Forms.Button button34;
+        private System.Windows.Forms.Button button35;
+        private System.Windows.Forms.Button button36;
+        private System.Windows.Forms.Button button37;
+        private System.Windows.Forms.Button button38;
+        private System.Windows.Forms.Button button39;
+        private System.Windows.Forms.Button button40;
+        private System.Windows.Forms.Button button41;
+        private System.Windows.Forms.Button button42;
+        private System.Windows.Forms.Button button43;
+        private System.Windows.Forms.Button button44;
+        private System.Windows.Forms.Button button45;
+        private System.Windows.Forms.Button button46;
+        private System.Windows.Forms.Button button47;
+        private System.Windows.Forms.Button button48;
+        private System.Windows.Forms.Button button49;
+        private System.Windows.Forms.Button button50;
+        private System.Windows.Forms.Button button51;
+        private System.Windows.Forms.Button button52;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTPGameWord;
+        private System.Windows.Forms.Button button53;
+        private System.Windows.Forms.Button button54;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.TabPage tabPageTPResult;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblTP;
+        private System.Windows.Forms.Label lblTPWordlbl;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Button button55;
+        private System.Windows.Forms.Button button56;
     }
 }
 

@@ -38,11 +38,17 @@ namespace Hangman {
             tabControlSinglePlayer.Appearance = TabAppearance.FlatButtons;
             tabControlSinglePlayer.ItemSize = new Size(0, 1);
             tabControlSinglePlayer.SizeMode = TabSizeMode.Fixed;
+            tabControlTwoPlayers.Appearance = TabAppearance.FlatButtons;
+            tabControlTwoPlayers.ItemSize = new Size(0, 1);
+            tabControlTwoPlayers.SizeMode = TabSizeMode.Fixed;
             //Make text and images transparent
             foreach (Control control in tabControlMenu.Controls) {
                 control.BackColor = Color.Transparent;
             }
             foreach (Control control in tabControlSinglePlayer.Controls) {
+                control.BackColor = Color.Transparent;
+            }
+            foreach (Control control in tabControlTwoPlayers.Controls) {
                 control.BackColor = Color.Transparent;
             }
 
@@ -79,12 +85,6 @@ namespace Hangman {
             tabControlMenu.SelectedTab = tabHelp;
         }
 
-        /// <summary>
-        /// Swaping between view in Two Players
-        /// </summary>
-        private void btnTwoBack_Click(object sender, EventArgs e) {
-            tabControlMenu.SelectedTab = tabMenu;
-        }
 
         /// <summary>
         /// Swaping between view in High Scores
@@ -92,7 +92,29 @@ namespace Hangman {
         private void btnHighScoreBack_Click(object sender, EventArgs e) {
             tabControlMenu.SelectedTab = tabMenu;
         }
+        /// <summary>
+        /// Writes the top high scores on the view
+        /// </summary>
+        private void SetHighScores()
+        {
+            Dificulty dificulty;
+            Enum.TryParse(cbScoresDificulty.SelectedItem.ToString(), true, out dificulty);
+            List<ScoreItem> difHighScores = _highScores.GetTopScores(dificulty);
+            StringBuilder stringBuilder = new StringBuilder();
+            int i = 0;
+            foreach (ScoreItem score in difHighScores) {
+                stringBuilder.Append($"{++i}. {score.Name,-20}{score.Score}\n");
+            }
+            lblHighScores.Text = stringBuilder.ToString();
+        }
 
+        /// <summary>
+        /// Changes the high scores depening on dificulty
+        /// </summary>
+        private void cbScoresDificulty_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetHighScores();
+        }
         /// <summary>
         /// Swaping between view in Help
         /// </summary>
@@ -104,33 +126,29 @@ namespace Hangman {
         /// <summary>
         /// Swaping between view in Sinle Player
         /// </summary>
-        private void btnSPBack_Click(object sender, EventArgs e)
-        {
+        private void btnSPBack_Click(object sender, EventArgs e) {
             tabControlMenu.SelectedTab = tabMenu;
         }
 
-        private void btnSPGameBack_Click(object sender, EventArgs e)
-        {
+        private void btnSPGameBack_Click(object sender, EventArgs e) {
             tabControlMenu.SelectedTab = tabMenu;
             tabControlSinglePlayer.SelectedTab = tabPageSinglePlayerMenu;
         }
 
-        private void btnSPGameNew_Click(object sender, EventArgs e)
-        {
+        private void btnSPGameNew_Click(object sender, EventArgs e) {
             NewGame();
         }
 
-        private void btnSPResBack_Click(object sender, EventArgs e)
-        {
+        private void btnSPResBack_Click(object sender, EventArgs e) {
             tabControlMenu.SelectedTab = tabMenu;
             tabControlSinglePlayer.SelectedTab = tabPageSinglePlayerMenu;
         }
 
-        private void btnSPResNew_Click(object sender, EventArgs e)
-        {
+        private void btnSPResNew_Click(object sender, EventArgs e) {
             tabControlSinglePlayer.SelectedTab = tabPageSinglePlayerGame;
             NewGame();
         }
+
         /// <summary>
         /// Validates that a name is entered
         /// </summary>
@@ -147,14 +165,12 @@ namespace Hangman {
         /// <summary>
         /// Clear the Hangman
         /// </summary>
-        private void ClearSpMan() {
-            pbHead.Visible = false;
-            pbBody.Visible = false;
-            pbLeftArm.Visible = false;
-            pbRightArm.Visible = false;
-            pbLeftLeg.Visible = false;
-            pbRightLeg.Visible = false;
+        private void ClearSpMan(Panel panel) {
+            foreach (Control control in panel.Controls) {
+                control.Visible = false;
+            }
         }
+
         /// <summary>
         /// Reset the letters to active
         /// </summary>
@@ -168,7 +184,7 @@ namespace Hangman {
         /// Set variables for new game
         /// </summary>
         private void NewGame() {
-            ClearSpMan();
+            ClearSpMan(pnlSPHangman);
             ResetLetters();
             _hangmanGame.NewGame();
             lblSPGuessWord.Text = _hangmanGame.GetWordMask();
@@ -182,7 +198,7 @@ namespace Hangman {
             int wrong = _hangmanGame.GetWrongCount();
             switch (wrong) {
                 case 0:
-                    ClearSpMan();
+                    ClearSpMan(pnlSPHangman);
                     break;
                 case 1:
                     pbHead.Visible = true;
@@ -212,7 +228,7 @@ namespace Hangman {
             if (_hangmanGame.CheckGuessed()) {
                 _hangmanGame.NewWord();
                 ResetLetters();
-                ClearSpMan();
+                ClearSpMan(pnlSPHangman);
             }
             lblSPGuessWord.Text = _hangmanGame.GetWordMask();
             lblScore.Text = _hangmanGame.GetScore().ToString();
@@ -263,7 +279,6 @@ namespace Hangman {
         }
 
 
-        
         /// <summary>
         /// Saves the scores
         /// </summary>
@@ -274,10 +289,11 @@ namespace Hangman {
                 bf.Serialize(str, _highScores);
             }
         }
+
         /// <summary>
         /// Loads the high scores
         /// </summary>
-        private void DeserializeScores() { 
+        private void DeserializeScores() {
             try {
                 using (FileStream str = File.OpenRead(ScoresPath)) {
                     BinaryFormatter bf = new BinaryFormatter();
@@ -289,26 +305,18 @@ namespace Hangman {
             }
         }
 
+   
         /// <summary>
-        /// Writes the top high scores on the view
+        /// Swaping between view in Two Players
         /// </summary>
-        private void SetHighScores() {
-            Dificulty dificulty;
-            Enum.TryParse(cbScoresDificulty.SelectedItem.ToString(), true, out dificulty);
-            List<ScoreItem> difHighScores = _highScores.GetTopScores(dificulty);
-            StringBuilder stringBuilder = new StringBuilder();
-            int i = 0;
-            foreach (ScoreItem score in difHighScores) {
-                stringBuilder.Append($"{++i}. {score.Name,-20}{score.Score}\n");
-            }
-            lblHighScores.Text = stringBuilder.ToString();
+        private void btnTPBack_Click(object sender, EventArgs e)
+        {
+            tabControlMenu.SelectedTab = tabMenu;
         }
 
-        /// <summary>
-        /// Changes the high scores depening on dificulty
-        /// </summary>
-        private void cbScoresDificulty_SelectedIndexChanged(object sender, EventArgs e) {
-            SetHighScores();
+        private void btnTPNamesNext_Click(object sender, EventArgs e)
+        {
+            tabControlTwoPlayers.SelectedTab = tabPageTWWordSelect;
         }
 
         /// <summary>
