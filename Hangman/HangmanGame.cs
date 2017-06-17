@@ -19,13 +19,13 @@ namespace Hangman
     /// </summary>
     public class HangmanGame {
         /// <summary>
-        /// Name of the Player
+        /// Player of the game
         /// </summary>
-        public string PlayerName { get; }
+        public Player Player { get; private set; }
         /// <summary>
         /// Word witch needs to be guessed
         /// </summary>
-        private HangmanWord _word;
+        protected HangmanWord Word;
         /// <summary>
         /// Dificulty of the game
         /// </summary>
@@ -35,20 +35,21 @@ namespace Hangman
         /// List of possible words from given category
         /// </summary>
         private readonly List<string> _words;
-        /// <summary>
-        /// Score for the current game
-        /// </summary>
-        private int _score;
 
         /// <summary>
         /// Constructor for new game. It initalize the word and others structures for the class.
         /// </summary>
         public HangmanGame(string playerName, Dificulty dificulty, string categoryPath) {
-            PlayerName = playerName;
+            Player = new Player(playerName);
             Dificulty = dificulty;
             _words = GetWordsFromFile(categoryPath);
-            _word = new HangmanWord(GetRandomWord());
-            _score = 0;
+            Word = new HangmanWord(GetRandomWord());
+        }
+        public HangmanGame(string playerName)
+        {
+            Player = new Player(playerName);
+            Dificulty = Dificulty.Eazy;
+            Word = new HangmanWord("unknown");
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Hangman
         /// </summary>
         /// <returns>String as mask for the word</returns>
         public string GetWordMask() {
-            return _word.WordMask();
+            return Word.WordMask();
         }
 
         /// <summary>
@@ -81,9 +82,9 @@ namespace Hangman
         /// </summary>
         /// <param name="letter">Guessed letter</param>
         /// <returns>Returns if the letter is correct</returns>
-        public void GuessLetter(char letter) {
-            if (_word.GuessLetter(letter)) {
-                _score++;
+        public virtual void GuessLetter(char letter) {
+            if (Word.GuessLetter(letter)) {
+                Player.AddScore(1);
             }
         }
 
@@ -92,7 +93,7 @@ namespace Hangman
         /// </summary>
         /// <returns>Return if the game is over</returns>
         public bool CheckGameOver() {
-            return _word.IsGameOver;
+            return Word.IsGameOver;
         }
 
         /// <summary>
@@ -100,7 +101,7 @@ namespace Hangman
         /// </summary>
         /// <returns>Returns if the letter is correct</returns>
         public bool CheckGuessed() {
-            return _word.IsGuessed;
+            return Word.IsGuessed;
         }
 
         /// <summary>
@@ -108,7 +109,7 @@ namespace Hangman
         /// </summary>
         /// <returns/>Returns the score of the game/returns>
         public int GetScore() {
-            return _score;
+            return Player.Score;
         }
 
         /// <summary>
@@ -116,28 +117,28 @@ namespace Hangman
         /// </summary>
         /// <returns>Returns number of wrong letter have been guesed</returns>
         public int GetWrongCount() {
-            return _word.WrongCount;
+            return Word.WrongCount;
         }
 
         /// <summary>
         /// Starts a new game
         /// </summary>
         public void NewGame() {
-            _word = new HangmanWord(GetRandomWord());
-            _score = 0;
+            Word = new HangmanWord(GetRandomWord());
+            Player.ResetScore();
         }
         /// <summary>
         /// A new word for guessing is generated
         /// </summary>
         public void NewWord() {
-            _word = new HangmanWord(GetRandomWord());
+            Word = new HangmanWord(GetRandomWord());
         }
 
         /// <summary>
         /// Returns the word
         /// </summary>
         public string GetWord() {
-            return _word.Word;
+            return Word.Word;
         }
     }
 }

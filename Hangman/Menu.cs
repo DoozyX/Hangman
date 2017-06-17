@@ -19,6 +19,8 @@ namespace Hangman {
         /// </summary>
         private HangmanGame _hangmanGame;
 
+        private HangmanTwoPlayerGame _hangmanTwoPlayerGame;
+
         /// <summary>
         /// High Scores for the game
         /// </summary>
@@ -64,6 +66,18 @@ namespace Hangman {
             DeserializeScores();
         }
 
+        private void ClearTpNames()
+        {
+            tbTPPlayer1Name.Text = "";
+            tbTPPlayer2Name.Text = "";
+        }
+
+        private void ClearTPWord()
+        {
+            tbTPCurrentWord.Text = "";
+        }
+
+
         /// <summary>
         /// Swaping between view in Menu Form
         /// </summary>
@@ -74,6 +88,8 @@ namespace Hangman {
 
         private void btnTwoPlayers_Click(object sender, EventArgs e) {
             tabControlMenu.SelectedTab = tabTwoPlayers;
+            tabControlTwoPlayers.SelectedTab = tabPageTPNames;
+            ClearTpNames();
         }
 
         private void btnHighScores_Click(object sender, EventArgs e) {
@@ -92,11 +108,11 @@ namespace Hangman {
         private void btnHighScoreBack_Click(object sender, EventArgs e) {
             tabControlMenu.SelectedTab = tabMenu;
         }
+
         /// <summary>
         /// Writes the top high scores on the view
         /// </summary>
-        private void SetHighScores()
-        {
+        private void SetHighScores() {
             Dificulty dificulty;
             Enum.TryParse(cbScoresDificulty.SelectedItem.ToString(), true, out dificulty);
             List<ScoreItem> difHighScores = _highScores.GetTopScores(dificulty);
@@ -111,10 +127,10 @@ namespace Hangman {
         /// <summary>
         /// Changes the high scores depening on dificulty
         /// </summary>
-        private void cbScoresDificulty_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        private void cbScoresDificulty_SelectedIndexChanged(object sender, EventArgs e) {
             SetHighScores();
         }
+
         /// <summary>
         /// Swaping between view in Help
         /// </summary>
@@ -165,7 +181,7 @@ namespace Hangman {
         /// <summary>
         /// Clear the Hangman
         /// </summary>
-        private void ClearSpMan(Panel panel) {
+        private void ClearHangman(Panel panel) {
             foreach (Control control in panel.Controls) {
                 control.Visible = false;
             }
@@ -174,8 +190,8 @@ namespace Hangman {
         /// <summary>
         /// Reset the letters to active
         /// </summary>
-        private void ResetLetters() {
-            foreach (Button btn in pnlLetters.Controls) {
+        private void ResetLetters(Panel panel) {
+            foreach (Button btn in panel.Controls) {
                 btn.Enabled = true;
             }
         }
@@ -184,8 +200,8 @@ namespace Hangman {
         /// Set variables for new game
         /// </summary>
         private void NewGame() {
-            ClearSpMan(pnlSPHangman);
-            ResetLetters();
+            ClearHangman(pnlSPHangman);
+            ResetLetters(pnlLetters);
             _hangmanGame.NewGame();
             lblSPGuessWord.Text = _hangmanGame.GetWordMask();
             lblScore.Text = _hangmanGame.GetScore().ToString();
@@ -198,7 +214,7 @@ namespace Hangman {
             int wrong = _hangmanGame.GetWrongCount();
             switch (wrong) {
                 case 0:
-                    ClearSpMan(pnlSPHangman);
+                    ClearHangman(pnlSPHangman);
                     break;
                 case 1:
                     pbHead.Visible = true;
@@ -227,8 +243,8 @@ namespace Hangman {
 
             if (_hangmanGame.CheckGuessed()) {
                 _hangmanGame.NewWord();
-                ResetLetters();
-                ClearSpMan(pnlSPHangman);
+                ResetLetters(pnlLetters);
+                ClearHangman(pnlSPHangman);
             }
             lblSPGuessWord.Text = _hangmanGame.GetWordMask();
             lblScore.Text = _hangmanGame.GetScore().ToString();
@@ -241,7 +257,7 @@ namespace Hangman {
             lblSPREsScore.Text = _hangmanGame.GetScore().ToString();
             lblSPResCorrect.Text = _hangmanGame.GetWord();
             tabControlSinglePlayer.SelectedTab = tabPageSPResult;
-            _highScores.AddScore(new ScoreItem(_hangmanGame.Dificulty, _hangmanGame.PlayerName, _hangmanGame.GetScore()));
+            _highScores.AddScore(new ScoreItem(_hangmanGame.Dificulty, _hangmanGame.Player.Name, _hangmanGame.GetScore()));
         }
 
         /// <summary>
@@ -305,19 +321,111 @@ namespace Hangman {
             }
         }
 
-   
+
         /// <summary>
         /// Swaping between view in Two Players
         /// </summary>
-        private void btnTPBack_Click(object sender, EventArgs e)
-        {
+        /// 
+        private void NewTpGame() {
+            ClearHangman(pnlTPHangman);
+            ResetLetters(pnlTPLetters);
+            _hangmanTwoPlayerGame.NewGame(tbTPCurrentWord.Text);
+            lblTPGameWord.Text = _hangmanTwoPlayerGame.GetWordMask();
+            lblTPScore1.Text = _hangmanTwoPlayerGame.GetScore().ToString();
+            lblTPScore2.Text = _hangmanTwoPlayerGame.GetScoreTwo().ToString();
+        }
+
+        /// <summary>
+        /// Checks for uptades in the current state of the game
+        /// </summary>
+        private void UpdateTpGameState() {
+            int wrong = _hangmanTwoPlayerGame.GetWrongCount();
+            switch (wrong) {
+                case 0:
+                    ClearHangman(pnlTPHangman);
+                    break;
+                case 1:
+                    pbTPHead.Visible = true;
+                    break;
+                case 2:
+                    pbTPBody.Visible = true;
+                    break;
+                case 3:
+                    pbTPLeftArm.Visible = true;
+                    break;
+                case 4:
+                    pbTPRightArm.Visible = true;
+                    break;
+                case 5:
+                    pbTPLeftLeg.Visible = true;
+                    break;
+                default:
+                    pbTPRightLeg.Visible = true;
+                    _hangmanTwoPlayerGame.SwitchPlayer();
+                    EndTpGame();
+
+                    return;
+            }
+            //for future
+            if (_hangmanTwoPlayerGame.CheckGameOver()) {
+                EndTpGame();
+                _hangmanTwoPlayerGame.SwitchPlayer();
+            }
+
+            if (_hangmanTwoPlayerGame.CheckGuessed()) {
+                ClearTPWord();
+                tabControlTwoPlayers.SelectedTab = tabPageTpWordSelect;
+            }
+            lblTPGameWord.Text = _hangmanTwoPlayerGame.GetWordMask();
+            lblTPScore1.Text = _hangmanTwoPlayerGame.GetScore().ToString();
+            lblTPScore2.Text = _hangmanTwoPlayerGame.GetScoreTwo().ToString();
+        }
+
+        /// <summary>
+        /// Resets the elements after the games and and adds the score
+        /// </summary>
+        private void EndTpGame() {
+            lblTPPlayer1ScoreRes.Text = _hangmanTwoPlayerGame.GetScore().ToString();
+            lblTPPlayer2ScoreRes.Text = _hangmanTwoPlayerGame.GetScoreTwo().ToString();
+            lblTPCorrectWord.Text = _hangmanTwoPlayerGame.GetWord();
+            tabControlTwoPlayers.SelectedTab = tabPageTPResult;
+        }
+
+        private void TpLetterClick(object sender, EventArgs e) {
+            Button btn = (Button) sender;
+            btn.Enabled = false;
+
+            _hangmanTwoPlayerGame.GuessLetter(btn.Text[0]);
+
+            UpdateTpGameState();
+        }
+
+        private void btnTPBack_Click(object sender, EventArgs e) {
             tabControlMenu.SelectedTab = tabMenu;
         }
 
-        private void btnTPNamesNext_Click(object sender, EventArgs e)
-        {
-            tabControlTwoPlayers.SelectedTab = tabPageTWWordSelect;
+        private void btnTPNamesNext_Click(object sender, EventArgs e) {
+            ClearTPWord();
+            tabControlTwoPlayers.SelectedTab = tabPageTpWordSelect;
+            _hangmanTwoPlayerGame = new HangmanTwoPlayerGame(tbTPPlayer1Name.Text, tbTPPlayer2Name.Text);
+            lblCurrentPlayer.Text = _hangmanTwoPlayerGame.GetRandomPlayer();
+            lblTPPlayer1.Text = _hangmanTwoPlayerGame.Player.Name;
+            lblTPPlayer2.Text = _hangmanTwoPlayerGame.PlayerTwo.Name;
+            lblTPPlayer1Res.Text = _hangmanTwoPlayerGame.Player.Name;
+            lblTPPlayer2Res.Text = _hangmanTwoPlayerGame.PlayerTwo.Name;
         }
+
+        private void btnTPWSBack_Click(object sender, EventArgs e) {
+            tabControlTwoPlayers.SelectedTab = tabPageTPNames;
+        }
+
+        private void btnTPWSPlay_Click(object sender, EventArgs e) {
+            _hangmanTwoPlayerGame.NewWord(tbTPCurrentWord.Text);
+            tabControlTwoPlayers.SelectedTab = tabPageTPGame;
+            NewTpGame();
+            lblTPGuessing.Text = _hangmanTwoPlayerGame.GuessingPlayer.Name;
+        }
+
 
         /// <summary>
         /// Closes the game
@@ -332,7 +440,22 @@ namespace Hangman {
         private void Hangman_FormClosing(object sender, FormClosingEventArgs e) {
             SerializeScores();
         }
+        
+        private void btnTpResCont_Click(object sender, EventArgs e) {
+            lblCurrentPlayer.Text = _hangmanTwoPlayerGame.CurrentPlayer.Name;
+            ClearTPWord();
+            tabControlTwoPlayers.SelectedTab = tabPageTpWordSelect;
 
+        }
 
+        private void btnTpResExit_Click(object sender, EventArgs e)
+        {
+            tabControlMenu.SelectedTab = tabMenu;
+        }
+
+        private void btnTPExit_Click(object sender, EventArgs e)
+        {
+            tabControlMenu.SelectedTab = tabMenu;
+        }
     }
 }
